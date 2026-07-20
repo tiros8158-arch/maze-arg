@@ -123,4 +123,8 @@ else{
 document.getElementById("message").innerHTML="CODE REFUSÉ";
 }
 
+function ouvrirDAX2(){
+
+window.location.href = "DAX2.html";
+
 }
