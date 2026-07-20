@@ -62,11 +62,9 @@ document.getElementById("fenetreCode").style.display="block";
 
 
 
-
 function verifierCode(){
 
 let code = document.getElementById("code").value;
-
 
 
 if(dossierActuel=="Creation" && code=="041P"){
@@ -122,6 +120,10 @@ window.location.href="Destruction_of_Evidence.html";
 else{
 document.getElementById("message").innerHTML="CODE REFUSÉ";
 }
+
+}
+
+
 
 function ouvrirDAX2(){
 
