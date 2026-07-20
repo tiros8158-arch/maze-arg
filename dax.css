@@ -1,0 +1,66 @@
+body {
+
+    background:black;
+    color:#00ff00;
+    font-family:monospace;
+
+}
+
+
+.terminal {
+
+    width:80%;
+    margin:50px auto;
+
+    border:2px solid #00ff00;
+    padding:20px;
+
+}
+
+
+h1 {
+
+    text-align:center;
+
+}
+
+
+#ecran {
+
+    height:400px;
+    overflow:auto;
+
+    border:1px solid #00ff00;
+
+    padding:10px;
+
+    margin-bottom:20px;
+
+}
+
+
+input {
+
+    width:70%;
+    padding:10px;
+
+    background:black;
+    color:#00ff00;
+
+    border:1px solid #00ff00;
+
+}
+
+
+button {
+
+    padding:10px;
+
+    background:black;
+    color:#00ff00;
+
+    border:1px solid #00ff00;
+
+    cursor:pointer;
+
+}
