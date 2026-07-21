@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DAX Archive</title>
+<title>DAX Prototype 3</title>
 
 <link rel="stylesheet" href="dax.css">
 
@@ -28,8 +28,7 @@ Système actif...
 <div id="conversation">
 
 <div class="message dax">
-DAX : Bienvenue dans mes archives.
-<br>
+DAX : Bienvenue dans mes archives.<br>
 Posez une question.
 </div>
 
@@ -39,7 +38,12 @@ Posez une question.
 
 <div class="zone-question">
 
-<input id="question" placeholder="Votre question...">
+<input 
+id="question" 
+placeholder="Écrivez une question..."
+autocomplete="off"
+>
+
 
 <button onclick="envoyerQuestion()">
 Analyser
@@ -52,231 +56,345 @@ Analyser
 </div>
 
 
+
 <script>
 
-    // ============================
-// ARCHIVES DAX - SYSTEME ARG
-// ============================
+
+// =================================
+// CONFIGURATION GEMINI
+// =================================
+
+
+const URL_DAX =
+"https://dax-ia.tiros8158.workers.dev/";
+
+
+
+
+// =================================
+// ARCHIVES ARG DE DAX
+// =================================
+
 
 function analyserQuestion(question){
+
 
 let q = question.toLowerCase();
 
 
-// TOM
 
-if(q.includes("qui est tom") || q.includes("tom")){
+// Conversation normale
 
-return `
-Analyse du sujet...
-
-Sujet identifié : TOM
-
-Accès aux archives principales refusé.
-
-ERREUR : XxToMxX
-`;
-}
-
-
-
-// DAX
 
 if(
-q.includes("pourquoi dax a été créé") ||
-q.includes("pourquoi dax existe") ||
-q.includes("qui est dax")
+q.includes("bonjour") ||
+q.includes("salut") ||
+q.includes("hello")
 ){
 
 return `
-Consultation du projet DAX...
+Connexion établie.<br><br>
 
-Données protégées.
-
-Autorisation nécessaire.
-
-ERREUR : cronomonoserot_6-5
+Bonjour.<br>
+Je suis DAX, système d'analyse du Maze Laboratory.<br>
+Que souhaitez-vous rechercher ?
 `;
+
 }
 
 
 
-// EMILLIEN
+if(
+q.includes("ça va") ||
+q.includes("sa va") ||
+q.includes("comment vas-tu")
+){
+
+return `
+Diagnostic terminé.<br><br>
+
+Tous les systèmes fonctionnent normalement.<br>
+DAX est opérationnel.
+`;
+
+}
+
+
+
+if(q.includes("merci")){
+
+return `
+Confirmation reçue.<br><br>
+
+DAX reste disponible.
+`;
+
+}
+
+
+
+
+// =============================
+// ARCHIVES SECRETES
+// =============================
+
+
+
+if(
+q.includes("qui est tom") ||
+q == "tom"
+){
+
+return `
+Analyse du sujet...<br><br>
+
+Sujet identifié : TOM<br><br>
+
+Accès aux archives principales refusé.<br><br>
+
+ERREUR : XxToMxX
+`;
+
+}
+
+
+
+if(
+q.includes("qui est dax") ||
+q.includes("pourquoi dax a été créé") ||
+q.includes("pourquoi dax existe")
+){
+
+return `
+Recherche du projet DAX...<br><br>
+
+Données protégées.<br>
+
+Autorisation nécessaire.<br><br>
+
+ERREUR : cronomonoserot_6-5
+`;
+
+}
+
+
 
 if(q.includes("qui est emillien")){
 
 return `
-Analyse...
+Analyse terminée.<br><br>
 
-Identité trouvée.
-
-Données classifiées.
+Archive Emillien verrouillée.<br><br>
 
 ERREUR : croximillien_5-6
 `;
+
 }
 
 
-
-// NOK
 
 if(q.includes("qui est nok")){
 
 return `
-Analyse...
+Analyse terminée.<br><br>
 
-Protection détectée.
-
-Archive verrouillée.
+Archive Nok verrouillée.<br><br>
 
 ERREUR : epicxonder_5-6
 `;
+
 }
 
 
 
-// CHAOS
-
 if(
-q.includes("pourquoi tom est dangereux") ||
+q.includes("chaos") ||
 q.includes("danger tom")
 ){
 
 return `
-Analyse du niveau de menace...
+Analyse du niveau de menace...<br><br>
 
-Information critique.
-
-Accès refusé.
+Information classifiée.<br><br>
 
 ERREUR : htrostb
 `;
+
 }
 
 
 
-// LEGION
-
 if(
-q.includes("quelles armes possédait tom") ||
+q.includes("legion") ||
 q.includes("arme de tom")
 ){
 
 return `
-Consultation de l'arsenal...
+Analyse de l'arsenal...<br><br>
 
-Données verrouillées.
+Accès refusé.<br><br>
 
 ERREUR : ast-tsa
 `;
+
 }
+    // =============================
+// SUITE DES ARCHIVES ARG
+// =============================
 
-
-
-// FURY
 
 if(
-q.includes("pourquoi les dieux ont peur") ||
-q.includes("dieux")
+q.includes("dieux") ||
+q.includes("fury")
 ){
 
 return `
-Connexion aux archives divines...
+Connexion aux archives divines...<br><br>
 
-Données inaccessibles.
+Données inaccessibles.<br><br>
 
 ERREUR : partypartyfolly
 `;
+
 }
 
 
 
-// DESTRUCTION LABO
-
 if(
-q.includes("comment le laboratoire a été détruit") ||
-q.includes("destruction du laboratoire") ||
-q.includes("labo détruit")
+q.includes("laboratoire") ||
+q.includes("labo détruit") ||
+q.includes("destruction")
 ){
 
 return `
-Analyse des archives...
+Analyse des archives du laboratoire...<br><br>
 
-Destruction confirmée.
-
-Cause inconnue.
+Destruction confirmée.<br><br>
 
 ERREUR : adieux.tom.labo
 `;
+
 }
 
 
 
-// CREATION
-
 if(
-q.includes("comment tom a été créé") ||
-q.includes("création de tom")
+q.includes("création de tom") ||
+q.includes("comment tom a été créé")
 ){
 
 return `
-Recherche de la recette...
+Recherche de la recette expérimentale...<br><br>
 
-Fichier expérimental trouvé.
-
-Accès interdit.
+Fichier verrouillé.<br><br>
 
 ERREUR : 041P
 `;
+
 }
 
 
 
-// KING
-
 if(
-q.includes("qui est le roi") ||
+q.includes("roi") ||
 q.includes("king")
 ){
 
 return `
-Analyse royale...
+Analyse royale...<br><br>
 
-Archive ancienne détectée.
+Ancienne archive détectée.<br><br>
 
 ERREUR : ABST_1
 `;
+
+}
+
+
+// Aucune archive trouvée
+
+return null;
+
+
 }
 
 
 
-// QUESTION INCONNUE
 
-return `
-Analyse terminée...
+// =================================
+// GEMINI
+// =================================
 
-Aucune archive correspondante.
 
-Recherche impossible.
-`;
+async function demanderGemini(question){
+
+
+try{
+
+
+let resultat = await fetch(
+URL_DAX,
+{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+
+body:JSON.stringify({
+question:question
+})
+
+
+});
+
+
+let data = await resultat.json();
+
+
+return data.answer ||
+"Aucune réponse reçue.";
 
 }
 
-    // ============================
-// AFFICHAGE DES MESSAGES
-// ============================
+
+catch(e){
 
 
-function envoyerQuestion(){
+return "Erreur de connexion avec DAX IA.";
 
-let champ = document.getElementById("question");
+}
 
-let question = champ.value.trim();
+
+}
+
+
+
+
+
+// =================================
+// ENVOI QUESTION
+// =================================
+
+
+async function envoyerQuestion(){
+
+
+let champ =
+document.getElementById("question");
+
+
+let question =
+champ.value.trim();
+
 
 
 if(question === ""){
 return;
 }
+
 
 
 ajouterMessage(
@@ -290,7 +408,28 @@ champ.value = "";
 
 
 
-let reponse = analyserQuestion(question);
+let reponse =
+analyserQuestion(question);
+
+
+
+// Si ce n'est pas une archive ARG
+// alors on utilise Gemini
+
+
+if(reponse === null){
+
+ajouterMessage(
+"DAX : Recherche externe...",
+"dax"
+);
+
+
+reponse =
+await demanderGemini(question);
+
+}
+
 
 
 
@@ -300,27 +439,39 @@ ajouterMessage(
 );
 
 
+
 }
 
 
 
 
-function ajouterMessage(texte, type){
+
+// =================================
+// AFFICHAGE
+// =================================
+
+
+function ajouterMessage(texte,type){
+
 
 let zone =
 document.getElementById("conversation");
+
 
 
 let message =
 document.createElement("div");
 
 
+
 message.className =
 "message " + type;
 
 
+
 message.innerHTML =
 texte;
+
 
 
 zone.appendChild(message);
@@ -330,8 +481,12 @@ zone.appendChild(message);
 zone.scrollTop =
 zone.scrollHeight;
 
+
 }
+
+
 </script>
+
 
 </body>
 
