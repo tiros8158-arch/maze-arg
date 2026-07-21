@@ -1,41 +1,230 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="fr">
 <head>
 
-<title>DAX Prototype 3</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DAX Prototype 4</title>
 
 <link rel="stylesheet" href="dax.css">
 
 </head>
 
-
 <body>
 
-<div class="terminal">
+<div class="dax-container">
 
-<h1>DAX Prototype 3</h1>
+<h1>🤖 DAX Prototype 4</h1>
 
-<div id="ecran">
+<p id="statut">
+Système DAX actif...
+</p>
 
-<p>DAX : Initialisation...</p>
-<p>DAX : Chargement des archives...</p>
-<p>DAX : Connexion au laboratoire Maze...</p>
-<p>DAX : Système opérationnel.</p>
+
+<div id="conversation">
+
+<div class="message dax">
+DAX : Bonjour. Je suis DAX Prototype 4.
+Pose-moi une question.
+</div>
 
 </div>
 
 
-<input id="question" placeholder="Écris une question à DAX">
+<div class="zone-question">
 
-<button onclick="envoyer()">Envoyer</button>
+<input 
+id="question"
+placeholder="Écris une question..."
+autocomplete="off"
+>
+
+
+<button onclick="envoyerQuestion()">
+Envoyer
+</button>
 
 
 </div>
 
 
-<script src="dax.js"></script>
+</div>
+
+
+<script>
+// ============================
+// ARCHIVES DAX - UNIVERS MAZE
+// ============================
+
+function reponseDAX(question){
+
+    let q = question.toLowerCase();
+
+
+    if(q.includes("qui est dax")){
+        return "DAX est une intelligence artificielle créée par le Maze Laboratory. Son objectif principal est de rechercher les ondes parfaites produites par Tom.";
+    }
+
+
+    if(q.includes("qui est tom")){
+        return "Tom est une création extrêmement puissante liée à une expérience complexe. Il a traversé de nombreuses transformations avant de devenir Cruxime puis Omega Tom.";
+    }
+
+
+    if(q.includes("qui est void")){
+        return "Void est un être ancien qui existait avant les grands événements. Après sa disparition, un pouvoir oublié est apparu : l'Œil de l'Éternité.";
+    }
+
+
+    if(q.includes("oeil") || q.includes("œil")){
+        return "L'Œil de l'Éternité est une entité née après la disparition de Void. Il possède un pouvoir capable de changer le destin de nombreuses choses.";
+    }
+
+
+    if(q.includes("sprandia") || q.includes("spriandia")){
+        return "Sprandia est le royaume où se déroulent les Chroniques de Sprandia.";
+    }
+
+
+    if(q.includes("maze")){
+        return "Le Maze Laboratory est un lieu secret lié à de nombreuses créations et expériences.";
+    }
+
+
+    if(q.includes("cruxime")){
+        return "Cruxime est le nouveau nom choisi par Tom après son évolution dans la faille temporelle.";
+    }
+
+
+    if(q.includes("omega tom") || q.includes("omega")){
+        return "Omega Tom est la forme finale de Tom, capable d'adaptation et possédant une puissance immense.";
+    }
+
+
+    if(q.includes("laboratoire")){
+        return "Le laboratoire de Tom contient les secrets de sa création et la recette qui explique son origine.";
+    }
+
+
+    return null;
+
+}
+
+
+
+// ============================
+// CONNEXION AU WORKER GEMINI
+// ============================
+
+const URL_DAX =
+"https://dax-ia.tiros8158.workers.dev/";
+
+
+
+async function envoyerQuestion(){
+
+    let champ = document.getElementById("question");
+
+    let question = champ.value.trim();
+
+
+    if(question === ""){
+        return;
+    }
+
+
+    ajouterMessage("Toi : " + question, "joueur");
+
+
+    champ.value = "";
+
+
+    let reponse = reponseDAX(question);
+
+
+
+    if(reponse == null){
+
+        ajouterMessage(
+            "DAX analyse les données...",
+            "dax"
+        );
+
+
+        try{
+
+            let resultat = await fetch(
+                URL_DAX,
+                {
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":"application/json"
+                    },
+
+                    body:JSON.stringify({
+                        question:question
+                    })
+                }
+            );
+
+
+            let data = await resultat.json();
+
+
+            reponse = data.answer ||
+            "Erreur : aucune réponse reçue.";
+
+
+        }
+
+        catch(e){
+
+            reponse =
+            "Erreur connexion DAX : " + e.message;
+
+        }
+
+    }
+
+
+    ajouterMessage(
+        "DAX : " + reponse,
+        "dax"
+    );
+
+}
+
+
+
+function ajouterMessage(texte, type){
+
+    let zone =
+    document.getElementById("conversation");
+
+
+    let message =
+    document.createElement("div");
+
+
+    message.className =
+    "message " + type;
+
+
+    message.innerHTML = texte;
+
+
+    zone.appendChild(message);
+
+
+    zone.scrollTop =
+    zone.scrollHeight;
+
+}
+  </script>
+
 
 </body>
-
 </html>
+  
