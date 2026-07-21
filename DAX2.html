@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DAX Prototype 4</title>
+<title>DAX Archive</title>
 
 <link rel="stylesheet" href="dax.css">
 
 </head>
 
+
 <body>
+
 
 <div class="dax-container">
 
-<h1>🤖 DAX Prototype 4</h1>
+<h1>🤖 DAX Prototype 3</h1>
 
 <p id="statut">
-Système DAX actif...
+Système actif...
 </p>
 
 
 <div id="conversation">
 
 <div class="message dax">
-DAX : Bonjour. Je suis DAX Prototype 4.
-Pose-moi une question.
+DAX : Bienvenue dans mes archives.
+<br>
+Posez une question.
 </div>
 
 </div>
+
 
 
 <div class="zone-question">
 
-<input 
-id="question"
-placeholder="Écris une question..."
-autocomplete="off"
->
-
+<input id="question" placeholder="Votre question...">
 
 <button onclick="envoyerQuestion()">
-Envoyer
+Analyser
 </button>
 
 
@@ -53,178 +53,286 @@ Envoyer
 
 
 <script>
+
+    // ============================
+// ARCHIVES DAX - SYSTEME ARG
 // ============================
-// ARCHIVES DAX - UNIVERS MAZE
-// ============================
 
-function reponseDAX(question){
+function analyserQuestion(question){
 
-    let q = question.toLowerCase();
+let q = question.toLowerCase();
 
 
-    if(q.includes("qui est dax")){
-        return "DAX est une intelligence artificielle créée par le Maze Laboratory. Son objectif principal est de rechercher les ondes parfaites produites par Tom.";
-    }
+// TOM
 
+if(q.includes("qui est tom") || q.includes("tom")){
 
-    if(q.includes("qui est tom")){
-        return "Tom est une création extrêmement puissante liée à une expérience complexe. Il a traversé de nombreuses transformations avant de devenir Cruxime puis Omega Tom.";
-    }
+return `
+Analyse du sujet...
 
+Sujet identifié : TOM
 
-    if(q.includes("qui est void")){
-        return "Void est un être ancien qui existait avant les grands événements. Après sa disparition, un pouvoir oublié est apparu : l'Œil de l'Éternité.";
-    }
+Accès aux archives principales refusé.
 
-
-    if(q.includes("oeil") || q.includes("œil")){
-        return "L'Œil de l'Éternité est une entité née après la disparition de Void. Il possède un pouvoir capable de changer le destin de nombreuses choses.";
-    }
-
-
-    if(q.includes("sprandia") || q.includes("spriandia")){
-        return "Sprandia est le royaume où se déroulent les Chroniques de Sprandia.";
-    }
-
-
-    if(q.includes("maze")){
-        return "Le Maze Laboratory est un lieu secret lié à de nombreuses créations et expériences.";
-    }
-
-
-    if(q.includes("cruxime")){
-        return "Cruxime est le nouveau nom choisi par Tom après son évolution dans la faille temporelle.";
-    }
-
-
-    if(q.includes("omega tom") || q.includes("omega")){
-        return "Omega Tom est la forme finale de Tom, capable d'adaptation et possédant une puissance immense.";
-    }
-
-
-    if(q.includes("laboratoire")){
-        return "Le laboratoire de Tom contient les secrets de sa création et la recette qui explique son origine.";
-    }
-
-
-    return null;
-
+ERREUR : XxToMxX
+`;
 }
 
 
 
-// ============================
-// CONNEXION AU WORKER GEMINI
-// ============================
+// DAX
 
-const URL_DAX =
-"https://dax-ia.tiros8158.workers.dev/";
+if(
+q.includes("pourquoi dax a été créé") ||
+q.includes("pourquoi dax existe") ||
+q.includes("qui est dax")
+){
 
+return `
+Consultation du projet DAX...
 
+Données protégées.
 
-async function envoyerQuestion(){
+Autorisation nécessaire.
 
-    let champ = document.getElementById("question");
-
-    let question = champ.value.trim();
-
-
-    if(question === ""){
-        return;
-    }
-
-
-    ajouterMessage("Toi : " + question, "joueur");
-
-
-    champ.value = "";
-
-
-    let reponse = reponseDAX(question);
+ERREUR : cronomonoserot_6-5
+`;
+}
 
 
 
-    if(reponse == null){
+// EMILLIEN
 
-        ajouterMessage(
-            "DAX analyse les données...",
-            "dax"
-        );
+if(q.includes("qui est emillien")){
 
+return `
+Analyse...
 
-        try{
+Identité trouvée.
 
-            let resultat = await fetch(
-                URL_DAX,
-                {
-                    method:"POST",
+Données classifiées.
 
-                    headers:{
-                        "Content-Type":"application/json"
-                    },
-
-                    body:JSON.stringify({
-                        question:question
-                    })
-                }
-            );
+ERREUR : croximillien_5-6
+`;
+}
 
 
-            let data = await resultat.json();
+
+// NOK
+
+if(q.includes("qui est nok")){
+
+return `
+Analyse...
+
+Protection détectée.
+
+Archive verrouillée.
+
+ERREUR : epicxonder_5-6
+`;
+}
 
 
-            reponse = data.answer ||
-            "Erreur : aucune réponse reçue.";
+
+// CHAOS
+
+if(
+q.includes("pourquoi tom est dangereux") ||
+q.includes("danger tom")
+){
+
+return `
+Analyse du niveau de menace...
+
+Information critique.
+
+Accès refusé.
+
+ERREUR : htrostb
+`;
+}
 
 
-        }
 
-        catch(e){
+// LEGION
 
-            reponse =
-            "Erreur connexion DAX : " + e.message;
+if(
+q.includes("quelles armes possédait tom") ||
+q.includes("arme de tom")
+){
 
-        }
+return `
+Consultation de l'arsenal...
 
-    }
+Données verrouillées.
+
+ERREUR : ast-tsa
+`;
+}
 
 
-    ajouterMessage(
-        "DAX : " + reponse,
-        "dax"
-    );
+
+// FURY
+
+if(
+q.includes("pourquoi les dieux ont peur") ||
+q.includes("dieux")
+){
+
+return `
+Connexion aux archives divines...
+
+Données inaccessibles.
+
+ERREUR : partypartyfolly
+`;
+}
+
+
+
+// DESTRUCTION LABO
+
+if(
+q.includes("comment le laboratoire a été détruit") ||
+q.includes("destruction du laboratoire") ||
+q.includes("labo détruit")
+){
+
+return `
+Analyse des archives...
+
+Destruction confirmée.
+
+Cause inconnue.
+
+ERREUR : adieux.tom.labo
+`;
+}
+
+
+
+// CREATION
+
+if(
+q.includes("comment tom a été créé") ||
+q.includes("création de tom")
+){
+
+return `
+Recherche de la recette...
+
+Fichier expérimental trouvé.
+
+Accès interdit.
+
+ERREUR : 041P
+`;
+}
+
+
+
+// KING
+
+if(
+q.includes("qui est le roi") ||
+q.includes("king")
+){
+
+return `
+Analyse royale...
+
+Archive ancienne détectée.
+
+ERREUR : ABST_1
+`;
+}
+
+
+
+// QUESTION INCONNUE
+
+return `
+Analyse terminée...
+
+Aucune archive correspondante.
+
+Recherche impossible.
+`;
 
 }
+
+    // ============================
+// AFFICHAGE DES MESSAGES
+// ============================
+
+
+function envoyerQuestion(){
+
+let champ = document.getElementById("question");
+
+let question = champ.value.trim();
+
+
+if(question === ""){
+return;
+}
+
+
+ajouterMessage(
+"Vous : " + question,
+"joueur"
+);
+
+
+
+champ.value = "";
+
+
+
+let reponse = analyserQuestion(question);
+
+
+
+ajouterMessage(
+"DAX :<br>" + reponse,
+"dax"
+);
+
+
+}
+
 
 
 
 function ajouterMessage(texte, type){
 
-    let zone =
-    document.getElementById("conversation");
+let zone =
+document.getElementById("conversation");
 
 
-    let message =
-    document.createElement("div");
+let message =
+document.createElement("div");
 
 
-    message.className =
-    "message " + type;
+message.className =
+"message " + type;
 
 
-    message.innerHTML = texte;
+message.innerHTML =
+texte;
 
 
-    zone.appendChild(message);
+zone.appendChild(message);
 
 
-    zone.scrollTop =
-    zone.scrollHeight;
+
+zone.scrollTop =
+zone.scrollHeight;
 
 }
-  </script>
-
+</script>
 
 </body>
+
 </html>
-  
