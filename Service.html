@@ -114,9 +114,7 @@ Une machine capable de désintégrer le #### du monde se trouve à cet endroit.
 </p>
 
 <button onclick="menuPrincipal()">
-
 N - Retour
-
 </button>
 
 `;
@@ -129,7 +127,7 @@ document.getElementById("contenuService").innerHTML=`
 
 <p>Tapez :</p>
 
-<button>
+<button onclick="comportement()">
 1 - Informations sur le comportement
 </button>
 
@@ -148,6 +146,32 @@ document.getElementById("contenuService").innerHTML=`
 <br><br>
 
 <button onclick="menuPrincipal()">
+0 - Retour
+</button>
+
+`;
+
+}
+
+function comportement(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Comportement du ####</b></p>
+
+<p>
+
+Le #### est très énergique et théâtral.<br><br>
+
+Il est très très très très très très très énergique.<br><br>
+
+Il adore la musique.<br><br>
+
+Il déteste être seul.
+
+</p>
+
+<button onclick="informations()">
 0 - Retour
 </button>
 
