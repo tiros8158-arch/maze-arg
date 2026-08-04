@@ -374,16 +374,14 @@ N - Retour
 
 
 
- function envoyerCoordonnees(){
+
+function envoyerCoordonnees(){
 
 let lat = document.getElementById("latitude").value;
 let lon = document.getElementById("longitude").value;
 
 
-if(
-(lat=="45.9750° N" && lon=="5.1167° E") ||
-(lat=="48.8589°" && lon=="2.347°")
-){
+if(lat=="45.9750° N" && lon=="5.1167° E"){
 
 document.getElementById("contenuService").innerHTML=`
 
@@ -394,17 +392,6 @@ Désolé pour ça, mais je ne peux plus continuer.<br><br>
 
 Ma création, Tom, souffre.<br>
 Je dois la libérer.<br><br>
-
-Sachez que ces coordonnées mènent à un petit village.<br>
-Je vous conseille d'y aller.<br><br>
-
-Faites attention.<br><br>
-
-Ma création, que le système appelle ####,
-a pour vrai nom l'Ange.<br>
-C'est Tom.<br><br>
-
-Le système préfère remplacer son nom par ####.<br><br>
 
 Adieux.
 </p>
@@ -417,7 +404,29 @@ N - Retour
 
 }
 
+
+else if(lat=="48.8589°" && lon=="2.347°"){
+
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>COORDONNÉES VALIDÉES</b></p>
+
+<p>
+Connexion aux archives de Tom...
+</p>
+
+<button onclick="ouvrirQuiz()">
+Continuer l'analyse
+</button>
+
+`;
+
+}
+
+
 else{
+
 
 document.getElementById("contenuService").innerHTML=`
 
@@ -439,7 +448,225 @@ N - Retour
 </button>
 
 `;
+}
+}
+function ouvrirQuiz(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>QUIZ question reponce pour les fan a faire aprais avoir tou vues mes coquin</b></p>
+
+<p>
+Question 1/5 :
+<br><br>
+Qui est la meilleure amie de Tom ?
+</p>
+
+<button onclick="question2('Natsuki')">
+Natsuki
+</button>
+
+<br><br>
+
+<button onclick="quizErreur()">
+Julie
+</button>
+
+<br><br>
+
+<button onclick="quizErreur()">
+Magi
+</button>
+
+`;
 
 }
+
+
+function question2(reponse){
+
+if(reponse=="Natsuki"){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Bonne réponse</b></p>
+
+<p>
+Question 2/5 :
+<br><br>
+Qu'est-ce que Tom a balancé dans l'espace à la fin de l'arc 5 ?
+</p>
+
+<button onclick="question3()">
+Une cacaouète
+</button>
+
+<br><br>
+
+<button onclick="bonusGraine()">
+Une graine de l'Arbre de la Solitude
+</button>
+
+`;
+
+}
+
+}
+
+
+
+function bonusGraine(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>BIEN JOUÉ</b></p>
+
+<p>
+Tu connais bien le continen de spriandia.
+</p>
+
+<button onclick="question3()">
+Continuer
+</button>
+
+`;
+
+}
+
+
+
+function question3(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Question 3/5</b></p>
+
+<p>
+Quelle est la forme finale de Tom ?
+</p>
+
+<button onclick="question4()">
+Omega Tom
+</button>
+
+<br><br>
+
+<button onclick="quizErreur()">
+Grand Sarsien
+</button>
+
+<br><br>
+
+<button onclick="quizErreur()">
+Crystal Tom
+</button>
+
+`;
+
+}
+
+
+
+function question4(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Question 4/5</b></p>
+
+<p>
+Qui est celui qui a achevé Tom ?
+</p>
+
+<button onclick="question5()">
+Xilo
+</button>
+
+<br><br>
+
+<button onclick="quizErreur()">
+Moon
+</button>
+
+<br><br>
+
+<button onclick="quizErreur()">
+Julien
+</button>
+
+`;
+
+}
+
+
+
+function question5(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Question 5/5</b></p>
+
+<p>
+Avec quoi Xilo a tué Tom ?
+</p>
+
+<button onclick="finQuiz()">
+Un bouclier
+</button>
+
+<br><br>
+
+<button onclick="quizErreur()">
+Une épée
+</button>
+
+<br><br>
+
+<button onclick="quizErreur()">
+Un sort
+</button>
+
+`;
+
+}
+
+
+
+function finQuiz(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>QUIZ TERMINÉ</b></p>
+
+<p>
+Félicitations !
+<br><br>
+Tu connais très bien le monde de Tom.
+</p>
+
+<button onclick="menuPrincipal()">
+Retour au service
+</button>
+
+`;
+
+}
+
+
+
+function quizErreur(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>MAUVAISE RÉPONSE</b></p>
+
+<p>
+Les archives refusent cette réponse.
+</p>
+
+<button onclick="ouvrirQuiz()">
+Recommencer
+</button>
+
+`;
 
 }
