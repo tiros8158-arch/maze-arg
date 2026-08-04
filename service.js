@@ -22,7 +22,7 @@ document.getElementById("contenuService").innerHTML=`
 
 <br><br>
 
-<button>
+<button onclick="reparation()">
 4 - Service de réparation
 </button>
 
@@ -332,6 +332,70 @@ Appelez rapidement le service de réparation.
 
 <button onclick="bizarre()">
 0 - Retour
+</button>
+
+`;
+
+}
+function reparation(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Service de réparation</b></p>
+
+<p>
+Veuillez entrer vos coordonnées GPS.<br><br>
+Le service viendra réparer votre ####.
+</p>
+
+<label>Latitude :</label><br>
+<input id="latitude" type="text">
+
+<br><br>
+
+<label>Longitude :</label><br>
+<input id="longitude" type="text">
+
+<br><br>
+
+<button onclick="envoyerCoordonnees()">
+Envoyer
+</button>
+
+<br><br>
+
+<button onclick="menuPrincipal()">
+N - Retour
+</button>
+
+`;
+
+}
+
+
+
+function envoyerCoordonnees(){
+
+let lat = document.getElementById("latitude").value;
+let lon = document.getElementById("longitude").value;
+
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Demande envoyée</b></p>
+
+<p>
+Coordonnées reçues :<br><br>
+Latitude : ${lat}<br>
+Longitude : ${lon}
+</p>
+
+<p>
+Le service de réparation arrive bientôt...
+</p>
+
+<button onclick="menuPrincipal()">
+N - Retour
 </button>
 
 `;
