@@ -27,7 +27,7 @@
 
 <br><br>
 
-<button>
+<button onclick="informations()">
 2 - Informations
 </button>
 
@@ -55,6 +55,44 @@ Quitter
 
 <script>
 
+function menuPrincipal(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p>Bienvenue sur le service de ####</p>
+
+<button onclick="detruire()">
+1 - Se débarrasser de votre ####
+</button>
+
+<br><br>
+
+<button onclick="informations()">
+2 - Informations
+</button>
+
+<br><br>
+
+<button>
+3 - Il est bizarre
+</button>
+
+<br><br>
+
+<button>
+4 - Service de réparation
+</button>
+
+<br><br>
+
+<button onclick="window.location.href='index.html'">
+Quitter
+</button>
+
+`;
+
+}
+
 function detruire(){
 
 document.getElementById("contenuService").innerHTML=`
@@ -75,10 +113,42 @@ Une machine capable de désintégrer le #### du monde se trouve à cet endroit.
 
 </p>
 
-<button onclick="window.location.href='Service.html'">
+<button onclick="menuPrincipal()">
 
 N - Retour
 
+</button>
+
+`;
+
+}
+
+function informations(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p>Tapez :</p>
+
+<button>
+1 - Informations sur le comportement
+</button>
+
+<br><br>
+
+<button>
+2 - Informations sur la personnalité
+</button>
+
+<br><br>
+
+<button>
+3 - Informations libres
+</button>
+
+<br><br>
+
+<button onclick="menuPrincipal()">
+0 - Retour
 </button>
 
 `;
