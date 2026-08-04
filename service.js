@@ -381,7 +381,8 @@ let lat = document.getElementById("latitude").value;
 let lon = document.getElementById("longitude").value;
 
 
-if(lat=="45.9750° N" && lon=="5.1167° E"){
+// Coordonnées de DAX
+if(lat=="43.7102° N" && lon=="1.0535° O"){
 
 document.getElementById("contenuService").innerHTML=`
 
@@ -405,8 +406,8 @@ N - Retour
 }
 
 
+// Coordonnées qui ouvrent le quiz
 else if(lat=="48.8589°" && lon=="2.347°"){
-
 
 document.getElementById("contenuService").innerHTML=`
 
@@ -425,8 +426,8 @@ Continuer l'analyse
 }
 
 
+// Toutes les autres coordonnées
 else{
-
 
 document.getElementById("contenuService").innerHTML=`
 
@@ -448,7 +449,9 @@ N - Retour
 </button>
 
 `;
+
 }
+
 }
 function ouvrirQuiz(){
 
