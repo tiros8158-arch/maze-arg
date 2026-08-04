@@ -246,7 +246,7 @@ Votre #### est bizarre dans :
 
 <br><br>
 
-<button>
+<button onclick="bizarreBouffer()">
 4 - Il veut vous bouffer
 </button>
 
@@ -309,6 +309,25 @@ document.getElementById("contenuService").innerHTML=`
 <p>
 La personnalité du #### présente des anomalies.<br><br>
 Le comportement émotionnel semble instable.
+</p>
+
+<button onclick="bizarre()">
+0 - Retour
+</button>
+
+`;
+
+}
+function bizarreBouffer(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>ALERTE DANGER</b></p>
+
+<p>
+Le #### montre un comportement hostile.<br><br>
+Il semble vouloir vous bouffer.<br><br>
+Appelez rapidement le service de réparation.
 </p>
 
 <button onclick="bizarre()">
