@@ -392,7 +392,7 @@ document.getElementById("contenuService").innerHTML=`
 Désolé pour ça, mais je ne peux plus continuer.<br><br>
 
 Ma création, Tom, souffre.<br>
-Je dois la libérer.<br><br>
+Je dois le libérer tom ou apeler l'ange mais le systems censure en ####.<br><br>
 
 Adieux.
 </p>
