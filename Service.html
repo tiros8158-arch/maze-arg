@@ -293,7 +293,7 @@ document.getElementById("contenuService").innerHTML=`
 Votre #### est bizarre dans :
 </p>
 
-<button>
+<button onclick="bizarreComportement()">
 1 - Son comportement
 </button>
 
@@ -318,6 +318,26 @@ Votre #### est bizarre dans :
 <br><br>
 
 <button onclick="menuPrincipal()">
+0 - Retour
+</button>
+
+`;
+
+}
+
+
+
+function bizarreComportement(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Analyse du comportement</b></p>
+
+<p>
+Essayez de le comprendre et de voir ce qui ne va pas.
+</p>
+
+<button onclick="bizarre()">
 0 - Retour
 </button>
 
