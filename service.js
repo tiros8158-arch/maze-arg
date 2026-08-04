@@ -300,3 +300,21 @@ Les données indiquent une variation inconnue.
 `;
 
 }
+function bizarrePersonnalite(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Analyse de la personnalité</b></p>
+
+<p>
+La personnalité du #### présente des anomalies.<br><br>
+Le comportement émotionnel semble instable.
+</p>
+
+<button onclick="bizarre()">
+0 - Retour
+</button>
+
+`;
+
+}
