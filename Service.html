@@ -53,7 +53,9 @@ Quitter
 
 </div>
 
+
 <script>
+
 
 function menuPrincipal(){
 
@@ -93,6 +95,8 @@ Quitter
 
 }
 
+
+
 function detruire(){
 
 document.getElementById("contenuService").innerHTML=`
@@ -108,9 +112,7 @@ Longitude : 5.1167° E
 </p>
 
 <p>
-
 Une machine capable de désintégrer le #### du monde se trouve à cet endroit.
-
 </p>
 
 <button onclick="menuPrincipal()">
@@ -120,6 +122,8 @@ N - Retour
 `;
 
 }
+
+
 
 function informations(){
 
@@ -133,7 +137,7 @@ document.getElementById("contenuService").innerHTML=`
 
 <br><br>
 
-<button>
+<button onclick="personnalite()">
 2 - Informations sur la personnalité
 </button>
 
@@ -152,6 +156,8 @@ document.getElementById("contenuService").innerHTML=`
 `;
 
 }
+
+
 
 function comportement(){
 
@@ -179,7 +185,89 @@ Il déteste être seul.
 
 }
 
+
+
+function personnalite(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p>
+Veuillez entrer le numéro de série de votre #### :
+</p>
+
+<input id="serie" type="text">
+
+<br><br>
+
+<button onclick="verifierSerie()">
+Valider
+</button>
+
+<br><br>
+
+<button onclick="informations()">
+0 - Retour
+</button>
+
+`;
+
+}
+
+
+
+function verifierSerie(){
+
+let serie = document.getElementById("serie").value;
+
+
+if(serie=="55341"){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>ACCESS AUTORISÉ</b></p>
+
+<p>
+LEAVE THE HUGE MAZE LABORATORY<br>
+OR THE MASTER WILL SETTLE YOUR ACCOUNT
+</p>
+
+<button onclick="informations()">
+0 - Retour
+</button>
+
+`;
+
+}
+
+
+else{
+
+document.getElementById("contenuService").innerHTML=`
+
+<p>
+NUMÉRO DE SÉRIE INVALIDE
+</p>
+
+<button onclick="personnalite()">
+Réessayer
+</button>
+
+<br><br>
+
+<button onclick="informations()">
+0 - Retour
+</button>
+
+`;
+
+}
+
+
+}
+
+
 </script>
+
 
 </body>
 
