@@ -389,7 +389,7 @@ document.getElementById("contenuService").innerHTML=`
 <p>
 Désolé pour ça, mais je ne peux plus continuer.<br><br>
 
-Tom a créé quelque chose...<br>
+Ma création, Tom, souffre.<br>
 Je dois la libérer.<br><br>
 
 Sachez que ces coordonnées mènent à un petit village.<br>
@@ -399,7 +399,11 @@ Faites attention.<br><br>
 
 Ma création, que le système appelle ####,
 a pour vrai nom l'Ange.<br>
-Le système préfère remplacer son nom par ####.
+C'est Tom.<br><br>
+
+Le système préfère remplacer son nom par ####.<br><br>
+
+Adieux.
 </p>
 
 <button onclick="menuPrincipal()">
