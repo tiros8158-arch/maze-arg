@@ -33,7 +33,7 @@
 
 <br><br>
 
-<button>
+<button onclick="bizarre()">
 3 - Il est bizarre
 </button>
 
@@ -75,7 +75,7 @@ document.getElementById("contenuService").innerHTML=`
 
 <br><br>
 
-<button>
+<button onclick="bizarre()">
 3 - Il est bizarre
 </button>
 
@@ -104,11 +104,8 @@ document.getElementById("contenuService").innerHTML=`
 <p><b>Coordonnées GPS trouvées</b></p>
 
 <p>
-
 Latitude : 45.9750° N<br>
-
 Longitude : 5.1167° E
-
 </p>
 
 <p>
@@ -143,7 +140,7 @@ document.getElementById("contenuService").innerHTML=`
 
 <br><br>
 
-<button>
+<button onclick="libre()">
 3 - Informations libres
 </button>
 
@@ -239,7 +236,6 @@ OR THE MASTER WILL SETTLE YOUR ACCOUNT
 
 }
 
-
 else{
 
 document.getElementById("contenuService").innerHTML=`
@@ -262,8 +258,36 @@ Réessayer
 
 }
 
+}
+
+
+
+function libre(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Recherche d'informations libres...</b></p>
+
+<p>
+Connexion aux données...
+</p>
+
+<p>
+ERREUR : INTERNET NON CONNECTÉ
+</p>
+
+<p>
+Impossible d'accéder aux informations libres.
+</p>
+
+<button onclick="informations()">
+0 - Retour
+</button>
+
+`;
 
 }
+
 
 
 </script>
