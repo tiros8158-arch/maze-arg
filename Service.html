@@ -17,23 +17,31 @@
 📞 Service de ####
 </div>
 
-<div class="contenu">
+<div class="contenu" id="contenuService">
 
 <p>Bienvenue sur le service de ####</p>
 
-<button>1 - Se débarrasser de votre ####</button>
+<button onclick="detruire()">
+1 - Se débarrasser de votre ####
+</button>
 
 <br><br>
 
-<button>2 - Informations</button>
+<button>
+2 - Informations
+</button>
 
 <br><br>
 
-<button>3 - Il est bizarre</button>
+<button>
+3 - Il est bizarre
+</button>
 
 <br><br>
 
-<button>4 - Service de réparation</button>
+<button>
+4 - Service de réparation
+</button>
 
 <br><br>
 
@@ -44,6 +52,40 @@ Quitter
 </div>
 
 </div>
+
+<script>
+
+function detruire(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Coordonnées GPS trouvées</b></p>
+
+<p>
+
+Latitude : 45.9750° N<br>
+
+Longitude : 5.1167° E
+
+</p>
+
+<p>
+
+Une machine capable de désintégrer le #### du monde se trouve à cet endroit.
+
+</p>
+
+<button onclick="window.location.href='Service.html'">
+
+N - Retour
+
+</button>
+
+`;
+
+}
+
+</script>
 
 </body>
 
