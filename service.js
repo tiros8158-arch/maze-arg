@@ -240,7 +240,7 @@ Votre #### est bizarre dans :
 
 <br><br>
 
-<button>
+<button onclick="bizarrePersonnalite()">
 3 - Sa personnalité
 </button>
 
