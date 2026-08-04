@@ -1,1 +1,116 @@
+function menuPrincipal(){
 
+document.getElementById("contenuService").innerHTML=`
+
+<p>Bienvenue sur le service de ####</p>
+
+<button onclick="detruire()">
+1 - Se débarrasser de votre ####
+</button>
+
+<br><br>
+
+<button onclick="informations()">
+2 - Informations
+</button>
+
+<br><br>
+
+<button onclick="bizarre()">
+3 - Il est bizarre
+</button>
+
+<br><br>
+
+<button>
+4 - Service de réparation
+</button>
+
+<br><br>
+
+<button onclick="window.location.href='index.html'">
+Quitter
+</button>
+
+`;
+
+}
+
+
+function detruire(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Coordonnées GPS trouvées</b></p>
+
+<p>
+Latitude : 45.9750° N<br>
+Longitude : 5.1167° E
+</p>
+
+<p>
+Une machine capable de désintégrer le #### du monde se trouve à cet endroit.
+</p>
+
+<button onclick="menuPrincipal()">
+N - Retour
+</button>
+
+`;
+
+}
+
+
+function informations(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p>Tapez :</p>
+
+<button onclick="comportement()">
+1 - Informations sur le comportement
+</button>
+
+<br><br>
+
+<button onclick="personnalite()">
+2 - Informations sur la personnalité
+</button>
+
+<br><br>
+
+<button onclick="libre()">
+3 - Informations libres
+</button>
+
+<br><br>
+
+<button onclick="menuPrincipal()">
+0 - Retour
+</button>
+
+`;
+
+}
+
+
+function comportement(){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>Comportement du ####</b></p>
+
+<p>
+Le #### est très énergique et théâtral.<br><br>
+Il est très très très très très très très énergique.<br><br>
+Il adore la musique.<br><br>
+Il déteste être seul.
+</p>
+
+<button onclick="informations()">
+0 - Retour
+</button>
+
+`;
+
+}
