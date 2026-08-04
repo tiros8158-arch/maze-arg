@@ -457,7 +457,7 @@ function ouvrirQuiz(){
 
 document.getElementById("contenuService").innerHTML=`
 
-<p><b>QUIZ question reponce pour les fan a faire aprais avoir tou vues mes coquin</b></p>
+<p><b>QUIZ</b></p>
 
 <p>
 Question 1/5 :
@@ -465,20 +465,12 @@ Question 1/5 :
 Qui est la meilleure amie de Tom ?
 </p>
 
-<button onclick="question2('Natsuki')">
-Natsuki
-</button>
+<input id="reponseQuiz" type="text">
 
 <br><br>
 
-<button onclick="quizErreur()">
-Julie
-</button>
-
-<br><br>
-
-<button onclick="quizErreur()">
-Magi
+<button onclick="verifierQuestion1()">
+Valider
 </button>
 
 `;
@@ -486,9 +478,29 @@ Magi
 }
 
 
-function question2(reponse){
+
+function verifierQuestion1(){
+
+let reponse = document.getElementById("reponseQuiz").value;
 
 if(reponse=="Natsuki"){
+
+question2();
+
+}
+
+else{
+
+quizErreur();
+
+}
+
+}
+
+
+
+
+function question2(){
 
 document.getElementById("contenuService").innerHTML=`
 
@@ -500,32 +512,38 @@ Question 2/5 :
 Qu'est-ce que Tom a balancé dans l'espace à la fin de l'arc 5 ?
 </p>
 
-<button onclick="question3()">
-Une cacaouète
-</button>
+<input id="reponseQuiz" type="text">
 
 <br><br>
 
-<button onclick="bonusGraine()">
-Une graine de l'Arbre de la Solitude
+<button onclick="verifierQuestion2()">
+Valider
 </button>
 
 `;
 
 }
 
+
+
+function verifierQuestion2(){
+
+let reponse = document.getElementById("reponseQuiz").value;
+
+if(reponse=="Une cacaouète"){
+
+question3();
+
 }
 
-
-
-function bonusGraine(){
+else if(reponse=="Une graine de l'Arbre de la Solitude"){
 
 document.getElementById("contenuService").innerHTML=`
 
 <p><b>BIEN JOUÉ</b></p>
 
 <p>
-Tu connais bien le continen de spriandia.
+Tu connais bien le continent de Spriandia. fais aention a tom il aime els arm a feu ne lui en donen pas mais sa tu doix le savoir grand fan
 </p>
 
 <button onclick="question3()">
@@ -535,6 +553,15 @@ Continuer
 `;
 
 }
+
+else{
+
+quizErreur();
+
+}
+
+}
+
 
 
 
@@ -548,25 +575,38 @@ document.getElementById("contenuService").innerHTML=`
 Quelle est la forme finale de Tom ?
 </p>
 
-<button onclick="question4()">
-Omega Tom
-</button>
+<input id="reponseQuiz" type="text">
 
 <br><br>
 
-<button onclick="quizErreur()">
-Grand Sarsien
-</button>
-
-<br><br>
-
-<button onclick="quizErreur()">
-Crystal Tom
+<button onclick="verifierQuestion3()">
+Valider
 </button>
 
 `;
 
 }
+
+
+
+function verifierQuestion3(){
+
+let reponse = document.getElementById("reponseQuiz").value;
+
+if(reponse=="Omega Tom"){
+
+question4();
+
+}
+
+else{
+
+quizErreur();
+
+}
+
+}
+
 
 
 
@@ -580,25 +620,38 @@ document.getElementById("contenuService").innerHTML=`
 Qui est celui qui a achevé Tom ?
 </p>
 
-<button onclick="question5()">
-Xilo
-</button>
+<input id="reponseQuiz" type="text">
 
 <br><br>
 
-<button onclick="quizErreur()">
-Moon
-</button>
-
-<br><br>
-
-<button onclick="quizErreur()">
-Julien
+<button onclick="verifierQuestion4()">
+Valider
 </button>
 
 `;
 
 }
+
+
+
+function verifierQuestion4(){
+
+let reponse = document.getElementById("reponseQuiz").value;
+
+if(reponse=="Xilo"){
+
+question5();
+
+}
+
+else{
+
+quizErreur();
+
+}
+
+}
+
 
 
 
@@ -612,25 +665,38 @@ document.getElementById("contenuService").innerHTML=`
 Avec quoi Xilo a tué Tom ?
 </p>
 
-<button onclick="finQuiz()">
-Un bouclier
-</button>
+<input id="reponseQuiz" type="text">
 
 <br><br>
 
-<button onclick="quizErreur()">
-Une épée
-</button>
-
-<br><br>
-
-<button onclick="quizErreur()">
-Un sort
+<button onclick="verifierQuestion5()">
+Valider
 </button>
 
 `;
 
 }
+
+
+
+function verifierQuestion5(){
+
+let reponse = document.getElementById("reponseQuiz").value;
+
+if(reponse=="Un bouclier"){
+
+finQuiz();
+
+}
+
+else{
+
+quizErreur();
+
+}
+
+}
+
 
 
 
@@ -643,7 +709,8 @@ document.getElementById("contenuService").innerHTML=`
 <p>
 Félicitations !
 <br><br>
-Tu connais très bien le monde de Tom.
+Tu connais parfaitement le monde de qpriandia
+https://youtu.be/5ce-8ziuPWs.
 </p>
 
 <button onclick="menuPrincipal()">
@@ -656,6 +723,7 @@ Retour au service
 
 
 
+
 function quizErreur(){
 
 document.getElementById("contenuService").innerHTML=`
@@ -664,6 +732,8 @@ document.getElementById("contenuService").innerHTML=`
 
 <p>
 Les archives refusent cette réponse.
+<br><br>
+Le quiz doit recommencer.
 </p>
 
 <button onclick="ouvrirQuiz()">
