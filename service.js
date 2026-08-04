@@ -380,7 +380,10 @@ let lat = document.getElementById("latitude").value;
 let lon = document.getElementById("longitude").value;
 
 
-if(lat=="45.9750° N" && lon=="5.1167° E"){
+if(
+(lat=="45.9750° N" && lon=="5.1167° E") ||
+(lat=="48.8589°" && lon=="2.347°")
+){
 
 document.getElementById("contenuService").innerHTML=`
 
