@@ -311,10 +311,38 @@ ERREUR : ABST_1
 }
 
 
+// =============================
+// LOCALISATION DE TOM
+// =============================
+
+
+if(
+q.includes("où est tom") ||
+q.includes("ou est tom") ||
+q.includes("localisation de tom")
+){
+
+return `
+Recherche de localisation...<br><br>
+
+Coordonnées trouvées :<br><br>
+
+📍 Latitude : 48.8589°<br>
+📍 Longitude : 2.347°<br><br>
+
+Le téléphone du laboratoire peut maintenant être utilisé.<br><br>
+
+<button onclick="ouvrirQuiz()">
+Accéder aux archives de Tom
+</button>
+`;
+
+}
+
+
 // Aucune archive trouvée
 
 return null;
-
 
 }
 
