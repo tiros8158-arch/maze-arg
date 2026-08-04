@@ -382,7 +382,7 @@ let lon = document.getElementById("longitude").value;
 
 
 // Coordonnées de DAX
-if(lat=="43.7102° N" && lon=="1.0535° O"){
+if(lat=="45.9750° N" && lon=="5.1167° E"){
 
 document.getElementById("contenuService").innerHTML=`
 
