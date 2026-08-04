@@ -374,11 +374,43 @@ N - Retour
 
 
 
-function envoyerCoordonnees(){
+ function envoyerCoordonnees(){
 
 let lat = document.getElementById("latitude").value;
 let lon = document.getElementById("longitude").value;
 
+
+if(lat=="45.9750° N" && lon=="5.1167° E"){
+
+document.getElementById("contenuService").innerHTML=`
+
+<p><b>MESSAGE DE MAZE</b></p>
+
+<p>
+Désolé pour ça, mais je ne peux plus continuer.<br><br>
+
+Tom a créé quelque chose...<br>
+Je dois la libérer.<br><br>
+
+Sachez que ces coordonnées mènent à un petit village.<br>
+Je vous conseille d'y aller.<br><br>
+
+Faites attention.<br><br>
+
+Ma création, que le système appelle ####,
+a pour vrai nom l'Ange.<br>
+Le système préfère remplacer son nom par ####.
+</p>
+
+<button onclick="menuPrincipal()">
+N - Retour
+</button>
+
+`;
+
+}
+
+else{
 
 document.getElementById("contenuService").innerHTML=`
 
@@ -386,6 +418,7 @@ document.getElementById("contenuService").innerHTML=`
 
 <p>
 Coordonnées reçues :<br><br>
+
 Latitude : ${lat}<br>
 Longitude : ${lon}
 </p>
@@ -399,5 +432,7 @@ N - Retour
 </button>
 
 `;
+
+}
 
 }
