@@ -1,3 +1,4 @@
+```css
 body {
 
     margin:0;
@@ -11,6 +12,8 @@ body {
     height:100vh;
 
     font-family:Arial;
+
+    overflow:hidden;
 
 }
 
@@ -27,6 +30,8 @@ body {
 
 
 
+/* Icones */
+
 .icone {
 
     width:100px;
@@ -42,12 +47,31 @@ body {
 }
 
 
-
 .icone img {
 
     width:60px;
 
     height:60px;
+
+}
+
+
+
+/* Fenêtre générale */
+
+.fenetre {
+
+    position:absolute;
+
+    width:600px;
+
+    background:#eeeeee;
+
+    color:black;
+
+    border:3px solid black;
+
+    box-shadow:5px 5px 15px rgba(0,0,0,0.5);
 
 }
 
@@ -65,31 +89,17 @@ body {
 
     left:300px;
 
-    background:white;
-
-    color:black;
-
-    padding:30px;
-
-    border:2px solid black;
-
-}
-
-
-
-/* Fenêtre des dossiers */
-
-.fenetre {
-
-    width:600px;
-
-    margin:100px auto;
+    width:400px;
 
     background:#eeeeee;
 
     color:black;
 
     border:3px solid black;
+
+    box-shadow:5px 5px 15px rgba(0,0,0,0.5);
+
+    z-index:100;
 
 }
 
@@ -107,6 +117,16 @@ body {
 
     font-weight:bold;
 
+    cursor:move;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    user-select:none;
+
 }
 
 
@@ -118,8 +138,95 @@ body {
     padding:20px;
 
 }
-.service {
-    position:absolute;
-    right:20px;
-    top:20px;
+
+
+
+/* Boutons de fenêtre */
+
+.boutonsFenetre {
+
+    display:flex;
+
+    gap:5px;
+
 }
+
+
+.boutonsFenetre button {
+
+    width:28px;
+
+    height:24px;
+
+    padding:0;
+
+    border:1px solid #555;
+
+    background:#eeeeee;
+
+    color:black;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+.boutonsFenetre button:hover {
+
+    background:#cccccc;
+
+}
+
+
+
+/* Fenêtre The Tom */
+
+.fenetreTom {
+
+    position:absolute;
+
+    top:120px;
+
+    left:350px;
+
+    width:650px;
+
+    max-height:70vh;
+
+    background:#eeeeee;
+
+    color:black;
+
+    border:3px solid black;
+
+    box-shadow:5px 5px 15px rgba(0,0,0,0.5);
+
+    z-index:90;
+
+}
+
+
+.fenetreTom .contenu {
+
+    max-height:calc(70vh - 45px);
+
+    overflow:auto;
+
+}
+
+
+
+/* Service */
+
+.service {
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+}
+```
