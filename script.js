@@ -1,3 +1,4 @@
+```javascript
 let dossierActuel = "";
 
 function ouvrirService(){
@@ -120,3 +121,4 @@ document.getElementById("message").innerHTML="CODE REFUSÉ";
 }
 
 }
+```
