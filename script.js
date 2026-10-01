@@ -60,6 +60,11 @@ function ouvrirDestruction(){
     document.getElementById("fenetreCode").style.display="block";
 }
 
+function ouvrirCorbeille(){
+    dossierActuel = "Corbeille";
+    document.getElementById("fenetreCode").style.display="block";
+}
+
 function verifierCode(){
 
 let code = document.getElementById("code").value;
@@ -102,6 +107,10 @@ else if(dossierActuel=="Fury" && code=="partypartyfolly"){
 
 else if(dossierActuel=="Destruction" && code=="adieux.tom.labo"){
     window.location.href="Destruction_of_Evidence.html";
+}
+
+else if(dossierActuel=="Corbeille" && code=="041PTDY"){
+    window.location.href="Corbeille.html";
 }
 
 else{
