@@ -245,7 +245,7 @@ function verifierCode(){
    FENÊTRE THE TOM
    ========================= */
 
-async function ouvrirFenetreTom(){
+function ouvrirFenetreTom(){
 
     if(fenetreTomOuverte){
 
@@ -288,7 +288,75 @@ async function ouvrirFenetreTom(){
 
         <div class="contenu" id="contenuTom">
 
-            Chargement...
+            <h1>MAZE LABORATORY</h1>
+
+            <h2>ARCHIVE N°003</h2>
+
+            <p>Titre : THE TOM</p>
+
+            <p>Enfin...</p>
+
+            <p>Le voici.</p>
+
+            <p>Ma création parfaite.</p>
+
+            <p>Je l'ai nommé :</p>
+
+            <p><b>Tom</b></p>
+
+            <p>
+            Mais la mafia voulait un nom d'arme,
+            alors j'ai créé un deuxième nom :
+            </p>
+
+            <p><b>terre&eau omega Maze</b></p>
+
+            <p>Deux noms en un.</p>
+
+            <hr>
+
+            <h2>Recette de création :</h2>
+
+            <p>Pierre de Foudre ;</p>
+
+            <p>Pierre de Feu ;</p>
+
+            <p>Pierre d'Eau ;</p>
+
+            <p>Pierre de Plante ;</p>
+
+            <p>Pouvoirs de Morgan, la Dame Blanche ;</p>
+
+            <p>Sang du Créateur ;</p>
+
+            <p>Sang du Dieu de la Guerre ;</p>
+
+            <p>Sang de la Déesse de la Mort ;</p>
+
+            <p>Cendres de gobelin ;</p>
+
+            <p>Cendres d'un dieu du Chaos ;</p>
+
+            <p>Un phylactère ;</p>
+
+            <p>Un météore ;</p>
+
+            <p>Une Larme du Soleil ;</p>
+
+            <p>Une Pierre Lunaire ;</p>
+
+            <p>Une pincée d'Omega ;</p>
+
+            <p>Une faille temporelle dans une bouteille.</p>
+
+            <hr>
+
+            <p>
+            Statut :
+            CRÉATION RÉUSSIE
+            </p>
+
+            <p>- Dr. Maze</p>
 
         </div>
 
@@ -299,46 +367,6 @@ async function ouvrirFenetreTom(){
 
     fenetreTomOuverte = true;
 
-
-    /* Charger le contenu de The_Tom.html */
-
-    try{
-
-        let reponse = await fetch("The_Tom.html");
-
-        let texte = await reponse.text();
-
-        let page = new DOMParser().parseFromString(
-            texte,
-            "text/html"
-        );
-
-        let contenu = page.querySelector(".contenu");
-
-
-        if(contenu){
-
-            document.getElementById("contenuTom").innerHTML =
-                contenu.innerHTML;
-
-        }
-        else{
-
-            document.getElementById("contenuTom").innerHTML =
-                "Erreur de lecture du fichier.";
-
-        }
-
-    }
-    catch(erreur){
-
-        document.getElementById("contenuTom").innerHTML =
-            "Erreur de chargement.";
-
-    }
-
-
-    /* Rendre The Tom déplaçable */
 
     rendreDeplacable(
         fenetre,
@@ -354,12 +382,9 @@ async function ouvrirFenetreTom(){
 
 function reduireTom(){
 
-    let fenetre = document.getElementById("fenetreTom");
-
     let contenu = document.getElementById("contenuTom");
 
-
-    if(!fenetre || !contenu){
+    if(!contenu){
         return;
     }
 
@@ -386,13 +411,11 @@ function fermerTom(){
 
     let fenetre = document.getElementById("fenetreTom");
 
-
     if(fenetre){
 
         fenetre.remove();
 
     }
-
 
     fenetreTomOuverte = false;
 
@@ -469,8 +492,7 @@ function rendreDeplacable(fenetre, barre){
 
 
 /* =========================
-   RENDRE LA FENÊTRE DE CODE
-   DÉPLAÇABLE
+   FENÊTRE DE CODE DÉPLAÇABLE
    ========================= */
 
 document.addEventListener("DOMContentLoaded", function(){
