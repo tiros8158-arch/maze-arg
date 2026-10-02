@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -9,130 +10,93 @@
 
 </head>
 
-
 <body>
-
 
 <div class="bureau">
 
-
-<div class="icone service" onclick="ouvrirService()">
-<img src="images/telephone.png">
-<p>Service ####</p>
-</div>
-
-
-<div class="icone" onclick="ouvrirTom()">
-<img src="images/dossier.png">
-<p>The Tom</p>
-</div>
-
-
-<div class="icone" onclick="ouvrirCreation()">
-<img src="images/dossier.png">
-<p>Creation</p>
-</div>
-
-
-<div class="icone" onclick="ouvrirKing()">
-<img src="images/dossier.png">
-<p>Long Live to the King</p>
-</div>
-
-
-<div class="icone" onclick="ouvrirLegion()">
-<img src="images/dossier.png">
-<p>Legion of Stationery</p>
-</div>
-
-
-<div class="icone" onclick="ouvrirChaos()">
-<img src="images/dossier.png">
-<p>Chaos</p>
-</div>
-
+```
+<!-- DAX : reste directement sur le bureau -->
 
 <div class="icone" onclick="ouvrirDAX()">
-<img src="images/dossier.png">
-<p>DAX Archive</p>
+
+    <img src="images/dossier.png">
+
+    <p>DAX</p>
+
 </div>
 
 
-<div class="icone" onclick="ouvrirDAX2()">
-<img src="images/dossier.png">
-<p>DAX Prototype 3</p>
+<!-- Archive -->
+
+<div class="icone" onclick="ouvrirDossierArchive()">
+
+    <img src="images/dossier.png">
+
+    <p>Archive</p>
+
 </div>
 
 
-<div class="icone" onclick="ouvrirEmillien()">
-<img src="images/dossier.png">
-<p>Emillien</p>
+<!-- Service -->
+
+<div class="icone service" onclick="ouvrirService()">
+
+    <img src="images/telephone.png">
+
+    <p>Service ####</p>
+
 </div>
 
 
-<div class="icone" onclick="ouvrirNok()">
-<img src="images/dossier.png">
-<p>Nok</p>
-</div>
-
-
-<div class="icone" onclick="ouvrirFury()">
-<img src="images/dossier.png">
-<p>The Fury of the Gods</p>
-</div>
-
-
-<div class="icone" onclick="ouvrirDestruction()">
-<img src="images/dossier.png">
-<p>Destruction of Evidence</p>
-</div>
-
+<!-- Corbeille -->
 
 <div class="icone" onclick="ouvrirCorbeille()">
-<img src="images/corbeille.png">
-<p>Corbeille</p>
+
+    <img src="images/corbeille.png">
+
+    <p>Corbeille</p>
+
+</div>
+```
+
 </div>
 
-
-</div>
-
-
+<!-- Fenêtre de code -->
 
 <div id="fenetreCode" class="fenetreCode">
 
-<div class="barre fenetreCodeBarre">
+```
+<div class="barre">
 
-<span>Dossier sécurisé</span>
+    <span>Dossier sécurisé</span>
 
-<div class="boutonsFenetre">
+    <div class="boutonsFenetre">
 
-<button onclick="reduireCode()">—</button>
+        <button onclick="reduireCode()">—</button>
 
-<button onclick="fermerCode()">X</button>
+        <button onclick="fermerCode()">X</button>
 
-</div>
-
-</div>
-
-
-<div class="contenu">
-
-<p>Entrez le code :</p>
-
-<input id="code" type="text">
-
-<button onclick="verifierCode()">Ouvrir</button>
-
-<p id="message"></p>
-
-</div>
+    </div>
 
 </div>
 
 
+<div id="contenuCode" class="contenu">
+
+    <p>Entrez le code :</p>
+
+    <input id="code" type="text">
+
+    <button onclick="verifierCode()">Ouvrir</button>
+
+    <p id="message"></p>
+
+</div>
+```
+
+</div>
 
 <script src="script.js"></script>
-
 
 </body>
 
