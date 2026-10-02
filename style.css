@@ -1,8 +1,8 @@
-```css
 body {
 
     margin:0;
-background-image:url("images/fond.jpg");
+
+    background-image:url("images/fond.jpg");
 
     background-size:cover;
 
@@ -63,32 +63,6 @@ background-image:url("images/fond.jpg");
     position:absolute;
 
     width:600px;
-
-    background:#eeeeee;
-
-    color:black;
-
-    border:3px solid black;
-
-    box-shadow:5px 5px 15px rgba(0,0,0,0.5);
-
-}
-
-
-
-/* Fenêtre de code */
-
-.fenetreCode {
-
-    display:none;
-
-    position:absolute;
-
-    top:200px;
-
-    left:300px;
-
-    width:400px;
 
     background:#eeeeee;
 
@@ -228,4 +202,3 @@ background-image:url("images/fond.jpg");
     top:20px;
 
 }
-```
