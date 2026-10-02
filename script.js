@@ -2,534 +2,739 @@ let dossierActuel = "";
 
 let fenetreTomOuverte = false;
 
-
 /* =========================
-   OUVERTURE DES DOSSIERS
-   ========================= */
+SERVICE
+========================= */
 
 function ouvrirService(){
-    window.location.href = "Service.html";
+
+```
+window.location.href = "Service.html";
+```
+
 }
-
-
-function ouvrirCreation(){
-    dossierActuel = "Creation";
-    afficherFenetreCode();
-}
-
-
-function ouvrirTom(){
-    dossierActuel = "Tom";
-    afficherFenetreCode();
-}
-
-
-function ouvrirKing(){
-    dossierActuel = "King";
-    afficherFenetreCode();
-}
-
-
-function ouvrirLegion(){
-    dossierActuel = "Legion";
-    afficherFenetreCode();
-}
-
-
-function ouvrirChaos(){
-    dossierActuel = "Chaos";
-    afficherFenetreCode();
-}
-
-
-function ouvrirDAX(){
-    dossierActuel = "DAX";
-    afficherFenetreCode();
-}
-
-
-function ouvrirDAX2(){
-    window.location.href = "DAX2.html";
-}
-
-
-function ouvrirEmillien(){
-    dossierActuel = "Emillien";
-    afficherFenetreCode();
-}
-
-
-function ouvrirNok(){
-    dossierActuel = "Nok";
-    afficherFenetreCode();
-}
-
-
-function ouvrirFury(){
-    dossierActuel = "Fury";
-    afficherFenetreCode();
-}
-
-
-function ouvrirDestruction(){
-    dossierActuel = "Destruction";
-    afficherFenetreCode();
-}
-
-
-function ouvrirCorbeille(){
-    dossierActuel = "Corbeille";
-    afficherFenetreCode();
-}
-
 
 /* =========================
-   FENÊTRE DE CODE
-   ========================= */
+DAX
+========================= */
+
+/*
+DAX reste directement sur le bureau.
+Il ouvre directement son écran DAX.
+*/
+
+function ouvrirDAX(){
+
+```
+window.location.href = "DAX.html";
+```
+
+}
+
+/* =========================
+ARCHIVE
+========================= */
+
+function ouvrirDossierArchive(){
+
+```
+afficherDossier(
+    "Archive",
+    [
+
+        {
+            nom: "The Tom",
+            action: "ouvrirTom()"
+        },
+
+        {
+            nom: "Creation",
+            action: "ouvrirCreation()"
+        },
+
+        {
+            nom: "Long Live to the King",
+            action: "ouvrirKing()"
+        },
+
+        {
+            nom: "Legion of Stationery",
+            action: "ouvrirLegion()"
+        },
+
+        {
+            nom: "Chaos",
+            action: "ouvrirChaos()"
+        },
+
+        /*
+           Les Archives DAX sont dans Archive.
+        */
+
+        {
+            nom: "DAX Archive",
+            action: "ouvrirDAXArchive()"
+        },
+
+        {
+            nom: "DAX Prototype 3",
+            action: "ouvrirDAX2()"
+        },
+
+        {
+            nom: "Emillien",
+            action: "ouvrirEmillien()"
+        },
+
+        {
+            nom: "Nok",
+            action: "ouvrirNok()"
+        },
+
+        {
+            nom: "The Fury of the Gods",
+            action: "ouvrirFury()"
+        },
+
+        {
+            nom: "Destruction of Evidence",
+            action: "ouvrirDestruction()"
+        }
+
+    ]
+);
+```
+
+}
+
+/* =========================
+FICHIERS DE L'ARCHIVE
+========================= */
+
+function ouvrirTom(){
+
+```
+dossierActuel = "Tom";
+
+afficherFenetreCode();
+```
+
+}
+
+function ouvrirCreation(){
+
+```
+dossierActuel = "Creation";
+
+afficherFenetreCode();
+```
+
+}
+
+function ouvrirKing(){
+
+```
+dossierActuel = "King";
+
+afficherFenetreCode();
+```
+
+}
+
+function ouvrirLegion(){
+
+```
+dossierActuel = "Legion";
+
+afficherFenetreCode();
+```
+
+}
+
+function ouvrirChaos(){
+
+```
+dossierActuel = "Chaos";
+
+afficherFenetreCode();
+```
+
+}
+
+/* =========================
+ARCHIVES DAX
+========================= */
+
+function ouvrirDAXArchive(){
+
+```
+dossierActuel = "DAX";
+
+afficherFenetreCode();
+```
+
+}
+
+function ouvrirDAX2(){
+
+```
+window.location.href = "DAX2.html";
+```
+
+}
+
+function ouvrirEmillien(){
+
+```
+dossierActuel = "Emillien";
+
+afficherFenetreCode();
+```
+
+}
+
+function ouvrirNok(){
+
+```
+dossierActuel = "Nok";
+
+afficherFenetreCode();
+```
+
+}
+
+function ouvrirFury(){
+
+```
+dossierActuel = "Fury";
+
+afficherFenetreCode();
+```
+
+}
+
+function ouvrirDestruction(){
+
+```
+dossierActuel = "Destruction";
+
+afficherFenetreCode();
+```
+
+}
+
+/* =========================
+CORBEILLE
+========================= */
+
+function ouvrirCorbeille(){
+
+```
+dossierActuel = "Corbeille";
+
+afficherFenetreCode();
+```
+
+}
+
+/* =========================
+FENÊTRE DE CODE
+========================= */
 
 function afficherFenetreCode(){
 
-    let fenetre = document.getElementById("fenetreCode");
+```
+let fenetre = document.getElementById("fenetreCode");
 
-    if(!fenetre){
-        return;
-    }
+let contenu = document.getElementById("contenuCode");
 
-    fenetre.style.display = "block";
-    fenetre.style.zIndex = "500";
+if(!fenetre || !contenu){
 
-    let contenu = fenetre.querySelector(".contenu");
-
-    if(contenu){
-        contenu.style.display = "block";
-    }
+    return;
 
 }
 
+fenetre.style.display = "block";
 
-/* =========================
-   FERMER FENÊTRE DE CODE
-   ========================= */
+fenetre.style.zIndex = "600";
 
-function fermerCode(){
+document.getElementById("code").value = "";
 
-    let fenetre = document.getElementById("fenetreCode");
-
-    if(fenetre){
-        fenetre.style.display = "none";
-    }
+document.getElementById("message").textContent = "";
+```
 
 }
 
-
 /* =========================
-   RÉDUIRE FENÊTRE DE CODE
-   ========================= */
-
-function reduireCode(){
-
-    let fenetre = document.getElementById("fenetreCode");
-
-    if(!fenetre){
-        return;
-    }
-
-    let contenu = fenetre.querySelector(".contenu");
-
-    if(!contenu){
-        return;
-    }
-
-    if(contenu.style.display === "none"){
-        contenu.style.display = "block";
-    }
-    else{
-        contenu.style.display = "none";
-    }
-
-}
-
-
-/* =========================
-   VÉRIFICATION DES CODES
-   ========================= */
+VÉRIFICATION DES CODES
+========================= */
 
 function verifierCode(){
 
-    let champCode = document.getElementById("code");
+```
+let code = document.getElementById("code").value;
 
-    if(!champCode){
-        return;
-    }
-
-    let code = champCode.value;
+let destination = "";
 
 
-    /* THE TOM */
+if(dossierActuel === "Tom" && code === "XxToMxX"){
 
-    if(dossierActuel == "Tom" && code == "XxToMxX"){
+    afficherFenetreTom();
 
-        fermerCode();
-
-        ouvrirFenetreTom();
-
-        return;
-    }
-
-
-    /* CREATION */
-
-    if(dossierActuel == "Creation" && code == "041P"){
-        window.location.href = "Creation.html";
-        return;
-    }
-
-
-    /* KING */
-
-    if(dossierActuel == "King" && code == "ABST_1"){
-        window.location.href = "Long_Live_to_the_King.html";
-        return;
-    }
-
-
-    /* LEGION */
-
-    if(dossierActuel == "Legion" && code == "ast-tsa"){
-        window.location.href = "Legion_of_Stationery.html";
-        return;
-    }
-
-
-    /* CHAOS */
-
-    if(dossierActuel == "Chaos" && code == "htrostb"){
-        window.location.href = "Chaos.html";
-        return;
-    }
-
-
-    /* DAX */
-
-    if(dossierActuel == "DAX" && code == "cronomonoserot_6-5"){
-        window.location.href = "DAX.html";
-        return;
-    }
-
-
-    /* EMILLIEN */
-
-    if(dossierActuel == "Emillien" && code == "croximillien_5-6"){
-        window.location.href = "Emillien.html";
-        return;
-    }
-
-
-    /* NOK */
-
-    if(dossierActuel == "Nok" && code == "epicxonder_5-6"){
-        window.location.href = "Nok.html";
-        return;
-    }
-
-
-    /* FURY */
-
-    if(dossierActuel == "Fury" && code == "partypartyfolly"){
-        window.location.href = "The_Fury_of_the_Gods.html";
-        return;
-    }
-
-
-    /* DESTRUCTION */
-
-    if(dossierActuel == "Destruction" && code == "adieux.tom.labo"){
-        window.location.href = "Destruction_of_Evidence.html";
-        return;
-    }
-
-
-    /* CORBEILLE */
-
-    if(dossierActuel == "Corbeille" && code == "041PTDY"){
-        window.location.href = "Corbeille.html";
-        return;
-    }
-
-
-    let message = document.getElementById("message");
-
-    if(message){
-        message.innerHTML = "CODE REFUSÉ";
-    }
+    return;
 
 }
 
 
+if(dossierActuel === "Creation" && code === "041P"){
+
+    destination = "Creation.html";
+
+}
+
+
+else if(dossierActuel === "King" && code === "ABST_1"){
+
+    destination = "Long_Live_to_the_King.html";
+
+}
+
+
+else if(dossierActuel === "Legion" && code === "ast-tsa"){
+
+    destination = "Legion_of_Stationery.html";
+
+}
+
+
+else if(dossierActuel === "Chaos" && code === "htrostb"){
+
+    destination = "Chaos.html";
+
+}
+
+
+else if(dossierActuel === "DAX" && code === "cronomonoserot_6-5"){
+
+    destination = "DAX.html";
+
+}
+
+
+else if(dossierActuel === "Emillien" && code === "croximillien_5-6"){
+
+    destination = "Emillien.html";
+
+}
+
+
+else if(dossierActuel === "Nok" && code === "epicxonder_5-6"){
+
+    destination = "Nok.html";
+
+}
+
+
+else if(dossierActuel === "Fury" && code === "partypartyfolly"){
+
+    destination = "The_Fury_of_the_Gods.html";
+
+}
+
+
+else if(dossierActuel === "Destruction" && code === "adieux.tom.labo"){
+
+    destination = "Destruction_of_Evidence.html";
+
+}
+
+
+else if(dossierActuel === "Corbeille" && code === "041PTDY"){
+
+    destination = "Corbeille.html";
+
+}
+
+
+if(destination !== ""){
+
+    window.location.href = destination;
+
+    return;
+
+}
+
+
+document.getElementById("message").textContent = "Code incorrect.";
+```
+
+}
+
 /* =========================
-   FENÊTRE THE TOM
-   ========================= */
+RÉDUIRE LA FENÊTRE DE CODE
+========================= */
 
-function ouvrirFenetreTom(){
+function reduireCode(){
 
-    if(fenetreTomOuverte){
+```
+let contenu = document.getElementById("contenuCode");
 
-        let ancienne = document.getElementById("fenetreTom");
+if(!contenu){
 
-        if(ancienne){
+    return;
 
-            ancienne.style.display = "block";
-            ancienne.style.zIndex = "600";
-
-        }
-
-        return;
-    }
+}
 
 
-    let fenetre = document.createElement("div");
+if(contenu.style.display === "none"){
 
-    fenetre.id = "fenetreTom";
+    contenu.style.display = "block";
 
-    fenetre.className = "fenetreTom";
+}
+
+else{
+
+    contenu.style.display = "none";
+
+}
+```
+
+}
+
+/* =========================
+FERMER LA FENÊTRE DE CODE
+========================= */
+
+function fermerCode(){
+
+```
+let fenetre = document.getElementById("fenetreCode");
+
+if(fenetre){
+
+    fenetre.style.display = "none";
+
+}
+```
+
+}
+
+/* =========================
+FENÊTRE THE TOM
+========================= */
+
+function afficherFenetreTom(){
+
+```
+if(fenetreTomOuverte){
+
+    return;
+
+}
 
 
-    fenetre.innerHTML = `
+let fenetre = document.createElement("div");
 
-        <div class="barre" id="barreTom">
+fenetre.id = "fenetreTom";
 
-            <span>The_Tom.txt</span>
+fenetre.className = "fenetreTom";
 
-            <div class="boutonsFenetre">
 
-                <button onclick="reduireTom()">—</button>
+fenetre.innerHTML = `
 
-                <button onclick="fermerTom()">X</button>
+    <div class="barre">
 
-            </div>
+        <span>The Tom</span>
+
+        <div class="boutonsFenetre">
+
+            <button onclick="reduireTom()">—</button>
+
+            <button onclick="fermerTom()">X</button>
 
         </div>
 
+    </div>
 
-        <div class="contenu" id="contenuTom">
 
-            <h1>MAZE LABORATORY</h1>
+    <div id="contenuTom" class="contenu">
 
-            <h2>ARCHIVE N°003</h2>
+        <h2>The Tom</h2>
 
-            <p>Titre : THE TOM</p>
+        <p>Fichier sécurisé.</p>
 
-            <p>Enfin...</p>
+    </div>
 
-            <p>Le voici.</p>
+`;
 
-            <p>Ma création parfaite.</p>
 
-            <p>Je l'ai nommé :</p>
+document.body.appendChild(fenetre);
 
-            <p><b>Tom</b></p>
 
-            <p>
-            Mais la mafia voulait un nom d'arme,
-            alors j'ai créé un deuxième nom :
-            </p>
+fenetreTomOuverte = true;
 
-            <p><b>terre&eau omega Maze</b></p>
 
-            <p>Deux noms en un.</p>
+rendreDeplacable(
 
-            <hr>
+    fenetre,
 
-            <h2>Recette de création :</h2>
+    fenetre.querySelector(".barre")
 
-            <p>Pierre de Foudre ;</p>
+);
+```
 
-            <p>Pierre de Feu ;</p>
+}
 
-            <p>Pierre d'Eau ;</p>
+/* =========================
+RÉDUIRE THE TOM
+========================= */
 
-            <p>Pierre de Plante ;</p>
+function reduireTom(){
 
-            <p>Pouvoirs de Morgan, la Dame Blanche ;</p>
+```
+let contenu = document.getElementById("contenuTom");
 
-            <p>Sang du Créateur ;</p>
+if(!contenu){
 
-            <p>Sang de la Déesse de la Mort ;</p>
+    return;
 
-            <p>Cendres de gobelin ;</p>
+}
 
-            <p>Cendres d'un dieu du Chaos ;</p>
 
-            <p>Un phylactère ;</p>
+if(contenu.style.display === "none"){
 
-            <p>Un météore ;</p>
+    contenu.style.display = "block";
 
-            <p>Une Larme du Soleil ;</p>
+}
 
-            <p>Une Pierre Lunaire ;</p>
+else{
 
-            <p>Une pincée d'Omega ;</p>
+    contenu.style.display = "none";
 
-            <p>Une faille temporelle dans une bouteille.</p>
+}
+```
 
-            <hr>
+}
 
-            <p>
-            Statut :
-            CRÉATION RÉUSSIE
-            </p>
+/* =========================
+FERMER THE TOM
+========================= */
 
-            <p>- Dr. Maze</p>
+function fermerTom(){
+
+```
+let fenetre = document.getElementById("fenetreTom");
+
+if(fenetre){
+
+    fenetre.remove();
+
+}
+
+fenetreTomOuverte = false;
+```
+
+}
+
+/* =========================
+CRÉATION D'UNE FENÊTRE DE DOSSIER
+========================= */
+
+function afficherDossier(nom, fichiers){
+
+```
+let ancienneFenetre = document.getElementById("fenetreDossier");
+
+if(ancienneFenetre){
+
+    ancienneFenetre.remove();
+
+}
+
+
+let fenetre = document.createElement("div");
+
+fenetre.id = "fenetreDossier";
+
+fenetre.className = "fenetreDossier";
+
+
+let contenuFichiers = "";
+
+
+fichiers.forEach(function(fichier){
+
+    contenuFichiers += `
+
+        <div class="fichier" onclick="${fichier.action}">
+
+            <img src="images/fichier.png">
+
+            <p>${fichier.nom}</p>
 
         </div>
 
     `;
 
-
-    document.body.appendChild(fenetre);
-
-    fenetreTomOuverte = true;
+});
 
 
-    rendreDeplacable(
-        fenetre,
-        document.getElementById("barreTom")
-    );
+fenetre.innerHTML = `
 
-}
+    <div class="barre">
 
+        <span>${nom}</span>
 
-/* =========================
-   RÉDUIRE THE TOM
-   ========================= */
+        <div class="boutonsFenetre">
 
-function reduireTom(){
+            <button onclick="fermerDossier()">X</button>
 
-    let contenu = document.getElementById("contenuTom");
+        </div>
 
-    if(!contenu){
-        return;
-    }
+    </div>
 
 
-    if(contenu.style.display === "none"){
+    <div class="contenuDossier">
 
-        contenu.style.display = "block";
+        <div class="grilleFichiers">
 
-    }
-    else{
+            ${contenuFichiers}
 
-        contenu.style.display = "none";
+        </div>
 
-    }
+    </div>
 
-}
+`;
 
 
-/* =========================
-   FERMER THE TOM
-   ========================= */
+document.body.appendChild(fenetre);
 
-function fermerTom(){
 
-    let fenetre = document.getElementById("fenetreTom");
+rendreDeplacable(
 
-    if(fenetre){
+    fenetre,
 
-        fenetre.remove();
+    fenetre.querySelector(".barre")
 
-    }
-
-    fenetreTomOuverte = false;
+);
+```
 
 }
 
+/* =========================
+FERMER LE DOSSIER
+========================= */
+
+function fermerDossier(){
+
+```
+let fenetre = document.getElementById("fenetreDossier");
+
+if(fenetre){
+
+    fenetre.remove();
+
+}
+```
+
+}
 
 /* =========================
-   FENÊTRE DÉPLAÇABLE
-   ========================= */
+FENÊTRES DÉPLAÇABLES
+========================= */
 
 function rendreDeplacable(fenetre, barre){
 
-    if(!fenetre || !barre){
-        return;
-    }
+```
+if(!fenetre || !barre){
 
-
-    let enDeplacement = false;
-
-    let decalageX = 0;
-
-    let decalageY = 0;
-
-
-    barre.addEventListener("mousedown", function(e){
-
-        enDeplacement = true;
-
-
-        let rectangle =
-            fenetre.getBoundingClientRect();
-
-
-        decalageX =
-            e.clientX - rectangle.left;
-
-
-        decalageY =
-            e.clientY - rectangle.top;
-
-
-        fenetre.style.zIndex = "700";
-
-
-        e.preventDefault();
-
-    });
-
-
-    document.addEventListener("mousemove", function(e){
-
-        if(!enDeplacement){
-            return;
-        }
-
-
-        fenetre.style.left =
-            (e.clientX - decalageX) + "px";
-
-
-        fenetre.style.top =
-            (e.clientY - decalageY) + "px";
-
-    });
-
-
-    document.addEventListener("mouseup", function(){
-
-        enDeplacement = false;
-
-    });
+    return;
 
 }
 
 
+let enDeplacement = false;
+
+let decalageX = 0;
+
+let decalageY = 0;
+
+
+barre.addEventListener("mousedown", function(e){
+
+    enDeplacement = true;
+
+
+    let rectangle =
+        fenetre.getBoundingClientRect();
+
+
+    decalageX =
+        e.clientX - rectangle.left;
+
+
+    decalageY =
+        e.clientY - rectangle.top;
+
+
+    fenetre.style.zIndex = "700";
+
+
+    e.preventDefault();
+
+});
+
+
+document.addEventListener("mousemove", function(e){
+
+    if(!enDeplacement){
+
+        return;
+
+    }
+
+
+    fenetre.style.left =
+        (e.clientX - decalageX) + "px";
+
+
+    fenetre.style.top =
+        (e.clientY - decalageY) + "px";
+
+});
+
+
+document.addEventListener("mouseup", function(){
+
+    enDeplacement = false;
+
+});
+```
+
+}
+
 /* =========================
-   FENÊTRE DE CODE DÉPLAÇABLE
-   ========================= */
+FENÊTRE DE CODE DÉPLAÇABLE
+========================= */
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    let fenetreCode =
-        document.getElementById("fenetreCode");
-
-    let barreCode =
-        document.querySelector("#fenetreCode .barre");
+```
+let fenetreCode =
+    document.getElementById("fenetreCode");
 
 
-    rendreDeplacable(
-        fenetreCode,
-        barreCode
-    );
+let barreCode =
+    document.querySelector("#fenetreCode .barre");
+
+
+rendreDeplacable(
+
+    fenetreCode,
+
+    barreCode
+
+);
+```
 
 });
