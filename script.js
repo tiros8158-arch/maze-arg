@@ -1,4 +1,3 @@
-```javascript
 let dossierActuel = "";
 
 let fenetreTomOuverte = false;
@@ -108,6 +107,10 @@ function afficherFenetreCode(){
 }
 
 
+/* =========================
+   FERMER FENÊTRE DE CODE
+   ========================= */
+
 function fermerCode(){
 
     let fenetre = document.getElementById("fenetreCode");
@@ -118,6 +121,10 @@ function fermerCode(){
 
 }
 
+
+/* =========================
+   RÉDUIRE FENÊTRE DE CODE
+   ========================= */
 
 function reduireCode(){
 
@@ -170,7 +177,7 @@ function verifierCode(){
     }
 
 
-    /* AUTRES DOSSIERS */
+    /* CREATION */
 
     if(dossierActuel == "Creation" && code == "041P"){
         window.location.href = "Creation.html";
@@ -178,11 +185,15 @@ function verifierCode(){
     }
 
 
+    /* KING */
+
     if(dossierActuel == "King" && code == "ABST_1"){
         window.location.href = "Long_Live_to_the_King.html";
         return;
     }
 
+
+    /* LEGION */
 
     if(dossierActuel == "Legion" && code == "ast-tsa"){
         window.location.href = "Legion_of_Stationery.html";
@@ -190,11 +201,15 @@ function verifierCode(){
     }
 
 
+    /* CHAOS */
+
     if(dossierActuel == "Chaos" && code == "htrostb"){
         window.location.href = "Chaos.html";
         return;
     }
 
+
+    /* DAX */
 
     if(dossierActuel == "DAX" && code == "cronomonoserot_6-5"){
         window.location.href = "DAX.html";
@@ -202,11 +217,15 @@ function verifierCode(){
     }
 
 
+    /* EMILLIEN */
+
     if(dossierActuel == "Emillien" && code == "croximillien_5-6"){
         window.location.href = "Emillien.html";
         return;
     }
 
+
+    /* NOK */
 
     if(dossierActuel == "Nok" && code == "epicxonder_5-6"){
         window.location.href = "Nok.html";
@@ -214,17 +233,23 @@ function verifierCode(){
     }
 
 
+    /* FURY */
+
     if(dossierActuel == "Fury" && code == "partypartyfolly"){
         window.location.href = "The_Fury_of_the_Gods.html";
         return;
     }
 
 
+    /* DESTRUCTION */
+
     if(dossierActuel == "Destruction" && code == "adieux.tom.labo"){
         window.location.href = "Destruction_of_Evidence.html";
         return;
     }
 
+
+    /* CORBEILLE */
 
     if(dossierActuel == "Corbeille" && code == "041PTDY"){
         window.location.href = "Corbeille.html";
@@ -328,8 +353,6 @@ function ouvrirFenetreTom(){
             <p>Pouvoirs de Morgan, la Dame Blanche ;</p>
 
             <p>Sang du Créateur ;</p>
-
-            <p>Sang du Dieu de la Guerre ;</p>
 
             <p>Sang de la Déesse de la Mort ;</p>
 
@@ -510,4 +533,3 @@ document.addEventListener("DOMContentLoaded", function(){
     );
 
 });
-```
