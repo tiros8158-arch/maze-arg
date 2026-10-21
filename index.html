@@ -34,19 +34,21 @@
 <div id="fenetreCode" class="fenetreCode" style="display: none;">
     <div class="barre">
         <div class="titreBarre">
-            <button class="btnRetour" onclick="fermerCode()" title="Retour">🡠</button>
+            <button class="btnRetour" onclick="fermerCode()" title="Retour">←</button>
             <span>Dossier sécurisé</span>
         </div>
         <div class="boutonsFenetre">
             <button onclick="reduireCode()">—</button>
-            <button onclick="fermerCode()">X</button>
+            <button onclick="fermerCode()">✕</button>
         </div>
     </div>
     <div id="contenuCode" class="contenu">
-        <p>Entrez le code :</p>
-        <input id="code" type="text">
-        <button onclick="verifierCode()">Ouvrir</button>
-        <p id="message"></p>
+        <p class="texteCode">Entrez le code d'accès :</p>
+        <div class="ligneInput">
+            <input id="code" type="text" placeholder="...">
+            <button onclick="verifierCode()">Ouvrir</button>
+        </div>
+        <p id="message" class="messageErreur"></p>
     </div>
 </div>
 
