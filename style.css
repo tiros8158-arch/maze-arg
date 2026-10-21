@@ -73,9 +73,9 @@ FENÊTRES
     width: 650px;
     max-width: calc(100vw - 40px);
     max-height: 70vh;
-    background: #eeeeee;
+    background: #f0f0f0;
     color: black;
-    border: 3px solid black;
+    border: 1px solid #777;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
     z-index: 400;
 }
@@ -85,35 +85,56 @@ BARRE DES FENÊTRES
 ========================= */
 
 .barre {
-    background: #222;
-    color: white;
-    padding: 10px;
+    background: #e1e1e1;
+    color: black;
+    padding: 8px 10px;
     font-weight: bold;
     cursor: move;
     display: flex;
     justify-content: space-between;
     align-items: center;
     user-select: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.titreBarre {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btnRetour {
+    background: #ffffff;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    padding: 2px 6px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.btnRetour:hover {
+    background: #e5e5e5;
 }
 
 .boutonsFenetre {
     display: flex;
-    gap: 5px;
+    gap: 4px;
 }
 
 .boutonsFenetre button {
-    width: 28px;
-    height: 24px;
+    width: 26px;
+    height: 22px;
     padding: 0;
-    border: 1px solid #555;
-    background: #eeeeee;
+    border: 1px solid #aaa;
+    background: #ffffff;
     color: black;
     cursor: pointer;
     font-weight: bold;
+    border-radius: 2px;
 }
 
 .boutonsFenetre button:hover {
-    background: #cccccc;
+    background: #e5e5e5;
 }
 
 /* =========================
@@ -122,6 +143,7 @@ CONTENU DES DOSSIERS
 
 .contenuDossier {
     padding: 20px;
+    background: #ffffff;
     max-height: calc(70vh - 50px);
     overflow-y: auto;
 }
@@ -155,7 +177,7 @@ GRILLE DES FICHIERS
 }
 
 /* =========================
-FENÊTRE DE CODE
+FENÊTRE DE CODE (Style dossier ouvert)
 ========================= */
 
 .fenetreCode {
@@ -163,26 +185,37 @@ FENÊTRE DE CODE
     position: absolute;
     top: 150px;
     left: 350px;
-    width: 400px;
-    background: #eeeeee;
+    width: 420px;
+    background: #f0f0f0;
     color: black;
-    border: 3px solid black;
+    border: 1px solid #777;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
     z-index: 600;
 }
 
 .fenetreCode .contenu {
-    padding: 20px;
+    padding: 25px;
+    background: #ffffff;
 }
 
 .fenetreCode input {
-    width: 220px;
-    padding: 7px;
+    width: 240px;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
 }
 
 .fenetreCode .contenu button {
-    padding: 7px 12px;
+    padding: 8px 14px;
     cursor: pointer;
+    background: #e1e1e1;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.fenetreCode .contenu button:hover {
+    background: #d5d5d5;
 }
 
 /* =========================
@@ -196,9 +229,9 @@ FENÊTRE THE TOM
     width: 650px;
     max-width: calc(100vw - 40px);
     max-height: 70vh;
-    background: #eeeeee;
+    background: #f0f0f0;
     color: black;
-    border: 3px solid black;
+    border: 1px solid #777;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
     z-index: 500;
 }
@@ -206,4 +239,6 @@ FENÊTRE THE TOM
 .fenetreTom .contenu {
     max-height: calc(70vh - 50px);
     overflow: auto;
+    background: #ffffff;
+    padding: 20px;
 }
