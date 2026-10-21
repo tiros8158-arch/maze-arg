@@ -9,14 +9,14 @@ function ouvrirService(){
 }
 
 /* =========================
-DAX (Bureau)
+DAX (Bureau -> Ouvre DAX2)
 ========================= */
 function ouvrirDAX(){
-    window.location.href = "DAX.html";
+    window.location.href = "DAX2.html";
 }
 
 /* =========================
-ARCHIVE (Avec DAX2 pour DAX archive)
+ARCHIVE
 ========================= */
 function ouvrirDossierArchive(){
     afficherDossier(
@@ -27,7 +27,7 @@ function ouvrirDossierArchive(){
             { nom: "The Tom", action: "ouvrirTom()" },
             { nom: "Legion of Stationery", action: "ouvrirLegion()" },
             { nom: "Chaos", action: "ouvrirChaos()" },
-            { nom: "DAX archive", action: "ouvrirDAX2()" },
+            { nom: "DAX archive", action: "ouvrirDAXArchive()" },
             { nom: "Emillien", action: "ouvrirEmillien()" },
             { nom: "Nok", action: "ouvrirNok()" },
             { nom: "The Fury of the Gods", action: "ouvrirFury()" },
@@ -44,7 +44,7 @@ function ouvrirKing(){ dossierActuel = "King"; afficherFenetreCode(); }
 function ouvrirTom(){ dossierActuel = "Tom"; afficherFenetreCode(); }
 function ouvrirLegion(){ dossierActuel = "Legion"; afficherFenetreCode(); }
 function ouvrirChaos(){ dossierActuel = "Chaos"; afficherFenetreCode(); }
-function ouvrirDAX2(){ window.location.href = "DAX2.html"; }
+function ouvrirDAXArchive(){ dossierActuel = "DAX"; afficherFenetreCode(); }
 function ouvrirEmillien(){ dossierActuel = "Emillien"; afficherFenetreCode(); }
 function ouvrirNok(){ dossierActuel = "Nok"; afficherFenetreCode(); }
 function ouvrirFury(){ dossierActuel = "Fury"; afficherFenetreCode(); }
@@ -83,9 +83,12 @@ function verifierCode(){
     let destination = "";
 
     if(dossierActuel === "Tom" && code === "XxToMxX"){
-        destination = "The_Tom.html";
+        afficherFenetreTom();
+        fermerCode();
+        return;
     }
-    else if(dossierActuel === "Creation" && code === "041P"){
+
+    if(dossierActuel === "Creation" && code === "041P"){
         destination = "Creation.html";
     }
     else if(dossierActuel === "King" && code === "ABST_1"){
@@ -96,6 +99,9 @@ function verifierCode(){
     }
     else if(dossierActuel === "Chaos" && code === "htrostb"){
         destination = "Chaos.html";
+    }
+    else if(dossierActuel === "DAX" && code === "cronomonoserot_6-5"){
+        destination = "DAX.html";
     }
     else if(dossierActuel === "Emillien" && code === "croximillien_5-6"){
         destination = "Emillien.html";
@@ -138,6 +144,52 @@ function fermerCode(){
 }
 
 /* =========================
+FENÊTRE THE TOM
+========================= */
+function afficherFenetreTom(){
+    if(fenetreTomOuverte){ return; }
+
+    let fenetre = document.createElement("div");
+    fenetre.id = "fenetreTom";
+    fenetre.className = "fenetreTom";
+
+    fenetre.innerHTML = `
+        <div class="barre">
+            <div class="titreBarre">
+                <button class="btnRetour" onclick="fermerTom()" title="Retour">←</button>
+                <span>The Tom</span>
+            </div>
+            <div class="boutonsFenetre">
+                <button onclick="reduireTom()">—</button>
+                <button onclick="fermerTom()">✕</button>
+            </div>
+        </div>
+        <div id="contenuTom" class="contenu">
+            <h2>The Tom</h2>
+            <p>Fichier sécurisé.</p>
+        </div>
+    `;
+
+    document.body.appendChild(fenetre);
+    fenetreTomOuverte = true;
+    rendreDeplacable(fenetre, fenetre.querySelector(".barre"));
+}
+
+function reduireTom(){
+    let contenu = document.getElementById("contenuTom");
+    if(!contenu){ return; }
+    contenu.style.display = (contenu.style.display === "none") ? "block" : "none";
+}
+
+function fermerTom(){
+    let fenetre = document.getElementById("fenetreTom");
+    if(fenetre){
+        fenetre.remove();
+    }
+    fenetreTomOuverte = false;
+}
+
+/* =========================
 DOSSIER D'ARCHIVES
 ========================= */
 function afficherDossier(nom, fichiers){
@@ -163,11 +215,11 @@ function afficherDossier(nom, fichiers){
     fenetre.innerHTML = `
         <div class="barre">
             <div class="titreBarre">
-                <button class="btnRetour" onclick="fermerDossier()" title="Retour">🡠</button>
+                <button class="btnRetour" onclick="fermerDossier()" title="Retour">←</button>
                 <span>${nom}</span>
             </div>
             <div class="boutonsFenetre">
-                <button onclick="fermerDossier()">X</button>
+                <button onclick="fermerDossier()">✕</button>
             </div>
         </div>
 
