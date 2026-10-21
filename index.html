@@ -7,7 +7,7 @@
 <body>
 
 <div class="bureau">
-    <!-- Icônes alignées à gauche -->
+    <!-- Icônes du bureau -->
     <div class="icone" onclick="ouvrirDAX()">
         <img src="images/dossier.png">
         <p>DAX</p>
@@ -23,14 +23,14 @@
         <p>Corbeille</p>
     </div>
 
-    <!-- Service #### (tout à droite de l'écran) -->
+    <!-- Service #### (à la droite totale de l'écran) -->
     <div class="icone service" onclick="ouvrirService()">
         <img src="images/telephone.png">
         <p>Service ####</p>
     </div>
 </div>
 
-<!-- Fenêtre de code / Dossier sécurisé -->
+<!-- Fenêtre de demande de code -->
 <div id="fenetreCode" class="fenetreCode" style="display: none;">
     <div class="barre">
         <div class="titreBarre">
@@ -43,7 +43,7 @@
         </div>
     </div>
     <div id="contenuCode" class="contenu">
-        <p class="texteCode">Entrez le code d'accès :</p>
+        <p class="texteCode">Entrez le code :</p>
         <div class="ligneInput">
             <input id="code" type="text" placeholder="...">
             <button onclick="verifierCode()">Ouvrir</button>
