@@ -9,14 +9,14 @@ function ouvrirService(){
 }
 
 /* =========================
-DAX
+DAX (Bureau)
 ========================= */
 function ouvrirDAX(){
     window.location.href = "DAX.html";
 }
 
 /* =========================
-ARCHIVE (Ordre exact demandé)
+ARCHIVE (Avec DAX2 pour DAX archive)
 ========================= */
 function ouvrirDossierArchive(){
     afficherDossier(
@@ -27,7 +27,7 @@ function ouvrirDossierArchive(){
             { nom: "The Tom", action: "ouvrirTom()" },
             { nom: "Legion of Stationery", action: "ouvrirLegion()" },
             { nom: "Chaos", action: "ouvrirChaos()" },
-            { nom: "DAX archive", action: "ouvrirDAXArchive()" },
+            { nom: "DAX archive", action: "ouvrirDAX2()" },
             { nom: "Emillien", action: "ouvrirEmillien()" },
             { nom: "Nok", action: "ouvrirNok()" },
             { nom: "The Fury of the Gods", action: "ouvrirFury()" },
@@ -44,7 +44,7 @@ function ouvrirKing(){ dossierActuel = "King"; afficherFenetreCode(); }
 function ouvrirTom(){ dossierActuel = "Tom"; afficherFenetreCode(); }
 function ouvrirLegion(){ dossierActuel = "Legion"; afficherFenetreCode(); }
 function ouvrirChaos(){ dossierActuel = "Chaos"; afficherFenetreCode(); }
-function ouvrirDAXArchive(){ dossierActuel = "DAX"; afficherFenetreCode(); }
+function ouvrirDAX2(){ window.location.href = "DAX2.html"; }
 function ouvrirEmillien(){ dossierActuel = "Emillien"; afficherFenetreCode(); }
 function ouvrirNok(){ dossierActuel = "Nok"; afficherFenetreCode(); }
 function ouvrirFury(){ dossierActuel = "Fury"; afficherFenetreCode(); }
@@ -76,7 +76,7 @@ function afficherFenetreCode(){
 }
 
 /* =========================
-VÉRIFICATION DES CODES (Redirection directe page HTML)
+VÉRIFICATION DES CODES
 ========================= */
 function verifierCode(){
     let code = document.getElementById("code").value;
@@ -96,9 +96,6 @@ function verifierCode(){
     }
     else if(dossierActuel === "Chaos" && code === "htrostb"){
         destination = "Chaos.html";
-    }
-    else if(dossierActuel === "DAX" && code === "cronomonoserot_6-5"){
-        destination = "DAX.html";
     }
     else if(dossierActuel === "Emillien" && code === "croximillien_5-6"){
         destination = "Emillien.html";
@@ -165,7 +162,10 @@ function afficherDossier(nom, fichiers){
 
     fenetre.innerHTML = `
         <div class="barre">
-            <span>${nom}</span>
+            <div class="titreBarre">
+                <button class="btnRetour" onclick="fermerDossier()" title="Retour">🡠</button>
+                <span>${nom}</span>
+            </div>
             <div class="boutonsFenetre">
                 <button onclick="fermerDossier()">X</button>
             </div>
