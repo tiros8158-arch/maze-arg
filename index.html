@@ -1,103 +1,58 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <title>Maze System</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
 <div class="bureau">
+    <!-- Groupe d'icônes alignées à gauche comme sur le bureau -->
+    <div class="grille-gauche">
+        <!-- DAX -->
+        <div class="icone" onclick="ouvrirDAX()">
+            <img src="images/dossier.png">
+            <p>DAX</p>
+        </div>
 
-```
-<!-- DAX : reste directement sur le bureau -->
+        <!-- Archive -->
+        <div class="icone" onclick="ouvrirDossierArchive()">
+            <img src="images/dossier.png">
+            <p>Archive</p>
+        </div>
 
-<div class="icone" onclick="ouvrirDAX()">
+        <!-- Corbeille -->
+        <div class="icone" onclick="ouvrirCorbeille()">
+            <img src="images/corbeille.png">
+            <p>Corbeille</p>
+        </div>
+    </div>
 
-    <img src="images/dossier.png">
-
-    <p>DAX</p>
-
-</div>
-
-
-<!-- Archive -->
-
-<div class="icone" onclick="ouvrirDossierArchive()">
-
-    <img src="images/dossier.png">
-
-    <p>Archive</p>
-
-</div>
-
-
-<!-- Service -->
-
-<div class="icone service" onclick="ouvrirService()">
-
-    <img src="images/telephone.png">
-
-    <p>Service ####</p>
-
-</div>
-
-
-<!-- Corbeille -->
-
-<div class="icone" onclick="ouvrirCorbeille()">
-
-    <img src="images/corbeille.png">
-
-    <p>Corbeille</p>
-
-</div>
-```
-
+    <!-- Service (Puisqu'il est positionné en absolute right dans le CSS, il va s'aligner tout en haut à droite) -->
+    <div class="icone service" onclick="ouvrirService()">
+        <img src="images/telephone.png">
+        <p>Service ####</p>
+    </div>
 </div>
 
 <!-- Fenêtre de code -->
-
 <div id="fenetreCode" class="fenetreCode">
-
-```
-<div class="barre">
-
-    <span>Dossier sécurisé</span>
-
-    <div class="boutonsFenetre">
-
-        <button onclick="reduireCode()">—</button>
-
-        <button onclick="fermerCode()">X</button>
-
+    <div class="barre">
+        <span>Dossier sécurisé</span>
+        <div class="boutonsFenetre">
+            <button onclick="reduireCode()">—</button>
+            <button onclick="fermerCode()">X</button>
+        </div>
     </div>
-
-</div>
-
-
-<div id="contenuCode" class="contenu">
-
-    <p>Entrez le code :</p>
-
-    <input id="code" type="text">
-
-    <button onclick="verifierCode()">Ouvrir</button>
-
-    <p id="message"></p>
-
-</div>
-```
-
+    <div id="contenuCode" class="contenu">
+        <p>Entrez le code :</p>
+        <input id="code" type="text">
+        <button onclick="verifierCode()">Ouvrir</button>
+        <p id="message"></p>
+    </div>
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
