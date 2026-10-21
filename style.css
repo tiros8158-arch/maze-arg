@@ -7,7 +7,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -49,8 +49,7 @@ ICÔNES
 .icone p {
     margin: 5px 0 0 0;
     word-wrap: break-word;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    font-size: 14px;
+    text-shadow: 2px 2px 3px black;
 }
 
 /* =========================
@@ -64,23 +63,21 @@ SERVICE (Collé tout à droite)
 }
 
 /* =========================
-FENÊTRES (Style propre & soigné)
+FENÊTRES
 ========================= */
 
 .fenetreDossier {
     position: absolute;
     top: 120px;
     left: 300px;
-    width: 680px;
+    width: 650px;
     max-width: calc(100vw - 40px);
     max-height: 70vh;
-    background: #ffffff;
-    color: #333333;
-    border: 1px solid #b0b0b0;
-    border-radius: 6px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    background: #eeeeee;
+    color: black;
+    border: 3px solid black;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
     z-index: 400;
-    overflow: hidden;
 }
 
 /* =========================
@@ -88,16 +85,15 @@ BARRE DES FENÊTRES
 ========================= */
 
 .barre {
-    background: linear-gradient(to bottom, #fcfcfc, #e8e8e8);
-    color: #222222;
-    padding: 10px 14px;
-    font-weight: 600;
+    background: #222222;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
     cursor: move;
     display: flex;
     justify-content: space-between;
     align-items: center;
     user-select: none;
-    border-bottom: 1px solid #dcdcdc;
 }
 
 .titreBarre {
@@ -107,42 +103,36 @@ BARRE DES FENÊTRES
 }
 
 .btnRetour {
-    background: #ffffff;
-    border: 1px solid #cccccc;
+    background: #eeeeee;
+    border: 1px solid #555;
     cursor: pointer;
-    padding: 2px 8px;
+    padding: 2px 6px;
     font-weight: bold;
-    border-radius: 4px;
-    color: #444;
+    color: black;
 }
 
 .btnRetour:hover {
-    background: #f0f0f0;
+    background: #cccccc;
 }
 
 .boutonsFenetre {
     display: flex;
-    gap: 6px;
+    gap: 5px;
 }
 
 .boutonsFenetre button {
     width: 28px;
     height: 24px;
     padding: 0;
-    border: 1px solid #cccccc;
-    background: #ffffff;
-    color: #333333;
+    border: 1px solid #555;
+    background: #eeeeee;
+    color: black;
     cursor: pointer;
     font-weight: bold;
-    border-radius: 4px;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .boutonsFenetre button:hover {
-    background: #e5e5e5;
+    background: #cccccc;
 }
 
 /* =========================
@@ -150,9 +140,9 @@ CONTENU DES DOSSIERS
 ========================= */
 
 .contenuDossier {
-    padding: 25px;
-    background: #fafafa;
-    max-height: calc(70vh - 60px);
+    padding: 20px;
+    background: #ffffff;
+    max-height: calc(70vh - 50px);
     overflow-y: auto;
 }
 
@@ -171,30 +161,22 @@ GRILLE DES FICHIERS
     text-align: center;
     cursor: pointer;
     user-select: none;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background 0.2s;
-}
-
-.fichier:hover {
-    background: rgba(0, 120, 215, 0.1);
 }
 
 .fichier img {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 
 .fichier p {
-    margin: 6px 0 0 0;
+    margin: 5px 0 0 0;
     word-wrap: break-word;
-    font-size: 13px;
-    color: #222;
+    color: black;
 }
 
 /* =========================
-FENÊTRE DE CODE / MOT DE PASSE
+FENÊTRE DE CODE
 ========================= */
 
 .fenetreCode {
@@ -202,66 +184,54 @@ FENÊTRE DE CODE / MOT DE PASSE
     position: absolute;
     top: 150px;
     left: 350px;
-    width: 420px;
-    background: #ffffff;
-    color: #333333;
-    border: 1px solid #b0b0b0;
-    border-radius: 6px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    width: 400px;
+    background: #eeeeee;
+    color: black;
+    border: 3px solid black;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
     z-index: 600;
-    overflow: hidden;
 }
 
 .fenetreCode .contenu {
-    padding: 30px;
+    padding: 20px;
     background: #ffffff;
 }
 
 .texteCode {
     margin-top: 0;
     font-size: 14px;
-    color: #444;
+    color: black;
 }
 
 .ligneInput {
     display: flex;
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .fenetreCode input {
     flex: 1;
-    padding: 9px 12px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    font-size: 14px;
-    outline: none;
-}
-
-.fenetreCode input:focus {
-    border-color: #0078d7;
+    padding: 7px;
+    border: 1px solid black;
 }
 
 .fenetreCode .contenu button {
-    padding: 9px 16px;
+    padding: 7px 12px;
     cursor: pointer;
-    background: #0078d7;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-weight: 600;
+    background: #eeeeee;
+    border: 1px solid black;
+    font-weight: bold;
 }
 
 .fenetreCode .contenu button:hover {
-    background: #0063b1;
+    background: #cccccc;
 }
 
 .messageErreur {
-    color: #d9534f;
+    color: red;
     font-size: 13px;
-    margin-top: 12px;
+    margin-top: 10px;
     margin-bottom: 0;
-    font-weight: 500;
 }
 
 /* =========================
@@ -272,21 +242,19 @@ FENÊTRE THE TOM
     position: absolute;
     top: 120px;
     left: 350px;
-    width: 680px;
+    width: 650px;
     max-width: calc(100vw - 40px);
     max-height: 70vh;
-    background: #ffffff;
-    color: #333333;
-    border: 1px solid #b0b0b0;
-    border-radius: 6px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    background: #eeeeee;
+    color: black;
+    border: 3px solid black;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
     z-index: 500;
-    overflow: hidden;
 }
 
 .fenetreTom .contenu {
-    max-height: calc(70vh - 60px);
+    max-height: calc(70vh - 50px);
     overflow: auto;
     background: #ffffff;
-    padding: 25px;
+    padding: 20px;
 }
