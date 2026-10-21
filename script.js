@@ -9,7 +9,7 @@ function ouvrirService(){
 }
 
 /* =========================
-DAX (Bureau -> Ouvre DAX2)
+DAX (Le DAX du bureau ouvre DAX2.html)
 ========================= */
 function ouvrirDAX(){
     window.location.href = "DAX2.html";
@@ -44,7 +44,10 @@ function ouvrirKing(){ dossierActuel = "King"; afficherFenetreCode(); }
 function ouvrirTom(){ dossierActuel = "Tom"; afficherFenetreCode(); }
 function ouvrirLegion(){ dossierActuel = "Legion"; afficherFenetreCode(); }
 function ouvrirChaos(){ dossierActuel = "Chaos"; afficherFenetreCode(); }
+
+/* Le fichier "DAX archive" demande le code pour ensuite ouvrir DAX.html */
 function ouvrirDAXArchive(){ dossierActuel = "DAX"; afficherFenetreCode(); }
+
 function ouvrirEmillien(){ dossierActuel = "Emillien"; afficherFenetreCode(); }
 function ouvrirNok(){ dossierActuel = "Nok"; afficherFenetreCode(); }
 function ouvrirFury(){ dossierActuel = "Fury"; afficherFenetreCode(); }
