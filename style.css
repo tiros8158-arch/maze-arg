@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    padding: 0;
     background-image: url("images/fond.jpg");
     background-size: cover;
     background-position: center;
@@ -16,18 +17,15 @@ BUREAU
 ========================= */
 
 .bureau {
-    position: relative;
     min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 120px);
+    grid-auto-rows: 125px;
+    gap: 20px;
     padding: 25px;
     box-sizing: border-box;
-}
-
-/* Grille pour les icônes de gauche (DAX, Archive, Corbeille) */
-.grille-gauche {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
+    align-content: start;
+    position: relative;
 }
 
 /* =========================
