@@ -1,14 +1,10 @@
 /* =========================
-   STYLE GLOBAL DU BUREAU (index.html)
+   STYLE GLOBAL (Sans image de fond globale)
 ========================= */
 body {
     margin: 0;
     padding: 0;
-    background-image: url("images/fond.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #ffffff; /* Fond blanc par défaut pour toutes les pages (Service, fichiers, etc.) */
     min-height: 100vh;
     font-family: Arial, sans-serif;
     overflow-y: auto;
@@ -16,19 +12,15 @@ body {
 }
 
 /* =========================
-   FOND BLANC POUR TOUS LES FICHIERS OUVERTS
-   (Dès qu'on n'est plus sur la page index.html)
-========================= */
-html:not(:has(.bureau)) body {
-    background-image: none !important;
-    background-color: #ffffff !important;
-}
-
-/* =========================
-BUREAU
+   BUREAU (L'image de fond Windows est UNIQUEMENT ici)
 ========================= */
 
 .bureau {
+    background-image: url("images/fond.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(auto-fill, 120px);
@@ -134,7 +126,7 @@ BARRE DES FENÊTRES
 
 .boutonsFenetre button {
     width: 28px;
-    height: 24px;
+    height: 24px5px;
     padding: 0;
     border: 1px solid #555;
     background: #eeeeee;
@@ -162,7 +154,7 @@ CONTENU DES DOSSIERS
 GRILLE DES FICHIERS
 ========================= */
 
-grilleFichiers {
+.grilleFichiers {
     display: grid;
     grid-template-columns: repeat(auto-fill, 110px);
     gap: 25px;
