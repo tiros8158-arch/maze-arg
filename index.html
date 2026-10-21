@@ -30,10 +30,13 @@
     </div>
 </div>
 
-<!-- Fenêtre de code (Cachée au chargement) -->
+<!-- Fenêtre de code / Dossier sécurisé -->
 <div id="fenetreCode" class="fenetreCode" style="display: none;">
     <div class="barre">
-        <span>Dossier sécurisé</span>
+        <div class="titreBarre">
+            <button class="btnRetour" onclick="fermerCode()" title="Retour">🡠</button>
+            <span>Dossier sécurisé</span>
+        </div>
         <div class="boutonsFenetre">
             <button onclick="reduireCode()">—</button>
             <button onclick="fermerCode()">X</button>
