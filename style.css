@@ -1,27 +1,14 @@
 body {
-
-```
-margin: 0;
-
-background-image: url("images/fond.jpg");
-
-background-size: cover;
-
-background-position: center;
-
-background-repeat: no-repeat;
-
-background-attachment: fixed;
-
-min-height: 100vh;
-
-font-family: Arial, sans-serif;
-
-overflow-y: auto;
-
-overflow-x: hidden;
-```
-
+    margin: 0;
+    background-image: url("images/fond.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* =========================
@@ -29,25 +16,18 @@ BUREAU
 ========================= */
 
 .bureau {
+    position: relative;
+    min-height: 100vh;
+    padding: 25px;
+    box-sizing: border-box;
+}
 
-```
-min-height: 100vh;
-
-display: grid;
-
-grid-template-columns: repeat(auto-fill, 120px);
-
-grid-auto-rows: 125px;
-
-gap: 20px;
-
-padding: 25px;
-
-box-sizing: border-box;
-
-align-content: start;
-```
-
+/* Grille pour les icônes de gauche (DAX, Archive, Corbeille) */
+.grille-gauche {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
 }
 
 /* =========================
@@ -55,59 +35,33 @@ ICÔNES
 ========================= */
 
 .icone {
-
-```
-width: 100px;
-
-text-align: center;
-
-color: white;
-
-cursor: pointer;
-
-user-select: none;
-```
-
+    width: 100px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    user-select: none;
 }
 
 .icone img {
-
-```
-width: 60px;
-
-height: 60px;
-
-object-fit: contain;
-```
-
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .icone p {
-
-```
-margin: 5px 0 0 0;
-
-word-wrap: break-word;
-
-text-shadow: 2px 2px 3px black;
-```
-
+    margin: 5px 0 0 0;
+    word-wrap: break-word;
+    text-shadow: 2px 2px 3px black;
 }
 
 /* =========================
-SERVICE
+SERVICE (Collé tout à droite)
 ========================= */
 
 .service {
-
-```
-position: absolute;
-
-right: 20px;
-
-top: 20px;
-```
-
+    position: absolute;
+    right: 25px;
+    top: 25px;
 }
 
 /* =========================
@@ -115,31 +69,17 @@ FENÊTRES
 ========================= */
 
 .fenetreDossier {
-
-```
-position: absolute;
-
-top: 120px;
-
-left: 300px;
-
-width: 650px;
-
-max-width: calc(100vw - 40px);
-
-max-height: 70vh;
-
-background: #eeeeee;
-
-color: black;
-
-border: 3px solid black;
-
-box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-
-z-index: 400;
-```
-
+    position: absolute;
+    top: 120px;
+    left: 300px;
+    width: 650px;
+    max-width: calc(100vw - 40px);
+    max-height: 70vh;
+    background: #eeeeee;
+    color: black;
+    border: 3px solid black;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    z-index: 400;
 }
 
 /* =========================
@@ -147,67 +87,35 @@ BARRE DES FENÊTRES
 ========================= */
 
 .barre {
-
-```
-background: #222;
-
-color: white;
-
-padding: 10px;
-
-font-weight: bold;
-
-cursor: move;
-
-display: flex;
-
-justify-content: space-between;
-
-align-items: center;
-
-user-select: none;
-```
-
+    background: #222;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
 }
 
 .boutonsFenetre {
-
-```
-display: flex;
-
-gap: 5px;
-```
-
+    display: flex;
+    gap: 5px;
 }
 
 .boutonsFenetre button {
-
-```
-width: 28px;
-
-height: 24px;
-
-padding: 0;
-
-border: 1px solid #555;
-
-background: #eeeeee;
-
-color: black;
-
-cursor: pointer;
-
-font-weight: bold;
-```
-
+    width: 28px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid #555;
+    background: #eeeeee;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .boutonsFenetre button:hover {
-
-```
-background: #cccccc;
-```
-
+    background: #cccccc;
 }
 
 /* =========================
@@ -215,15 +123,9 @@ CONTENU DES DOSSIERS
 ========================= */
 
 .contenuDossier {
-
-```
-padding: 20px;
-
-max-height: calc(70vh - 50px);
-
-overflow-y: auto;
-```
-
+    padding: 20px;
+    max-height: calc(70vh - 50px);
+    overflow-y: auto;
 }
 
 /* =========================
@@ -231,51 +133,27 @@ GRILLE DES FICHIERS
 ========================= */
 
 .grilleFichiers {
-
-```
-display: grid;
-
-grid-template-columns: repeat(auto-fill, 110px);
-
-gap: 25px;
-```
-
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 110px);
+    gap: 25px;
 }
 
 .fichier {
-
-```
-width: 100px;
-
-text-align: center;
-
-cursor: pointer;
-
-user-select: none;
-```
-
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
 }
 
 .fichier img {
-
-```
-width: 60px;
-
-height: 60px;
-
-object-fit: contain;
-```
-
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .fichier p {
-
-```
-margin: 5px 0 0 0;
-
-word-wrap: break-word;
-```
-
+    margin: 5px 0 0 0;
+    word-wrap: break-word;
 }
 
 /* =========================
@@ -283,57 +161,30 @@ FENÊTRE DE CODE
 ========================= */
 
 .fenetreCode {
-
-```
-display: none;
-
-position: absolute;
-
-top: 150px;
-
-left: 350px;
-
-width: 400px;
-
-background: #eeeeee;
-
-color: black;
-
-border: 3px solid black;
-
-box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-
-z-index: 600;
-```
-
+    display: none;
+    position: absolute;
+    top: 150px;
+    left: 350px;
+    width: 400px;
+    background: #eeeeee;
+    color: black;
+    border: 3px solid black;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    z-index: 600;
 }
 
 .fenetreCode .contenu {
-
-```
-padding: 20px;
-```
-
+    padding: 20px;
 }
 
 .fenetreCode input {
-
-```
-width: 220px;
-
-padding: 7px;
-```
-
+    width: 220px;
+    padding: 7px;
 }
 
 .fenetreCode .contenu button {
-
-```
-padding: 7px 12px;
-
-cursor: pointer;
-```
-
+    padding: 7px 12px;
+    cursor: pointer;
 }
 
 /* =========================
@@ -341,39 +192,20 @@ FENÊTRE THE TOM
 ========================= */
 
 .fenetreTom {
-
-```
-position: absolute;
-
-top: 120px;
-
-left: 350px;
-
-width: 650px;
-
-max-width: calc(100vw - 40px);
-
-max-height: 70vh;
-
-background: #eeeeee;
-
-color: black;
-
-border: 3px solid black;
-
-box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-
-z-index: 500;
-```
-
+    position: absolute;
+    top: 120px;
+    left: 350px;
+    width: 650px;
+    max-width: calc(100vw - 40px);
+    max-height: 70vh;
+    background: #eeeeee;
+    color: black;
+    border: 3px solid black;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    z-index: 500;
 }
 
 .fenetreTom .contenu {
-
-```
-max-height: calc(70vh - 50px);
-
-overflow: auto;
-```
-
+    max-height: calc(70vh - 50px);
+    overflow: auto;
 }
