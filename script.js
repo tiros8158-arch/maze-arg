@@ -4,6 +4,7 @@ let fenetreTomOuverte = false;
 /* =========================
 SERVICE
 ========================= */
+
 function ouvrirService(){
     window.location.href = "Service.html";
 }
@@ -11,6 +12,7 @@ function ouvrirService(){
 /* =========================
 DAX
 ========================= */
+
 function ouvrirDAX(){
     window.location.href = "DAX.html";
 }
@@ -18,54 +20,22 @@ function ouvrirDAX(){
 /* =========================
 ARCHIVE
 ========================= */
+
 function ouvrirDossierArchive(){
     afficherDossier(
         "Archive",
         [
-            {
-                nom: "The Tom",
-                action: "ouvrirTom()"
-            },
-            {
-                nom: "Creation",
-                action: "ouvrirCreation()"
-            },
-            {
-                nom: "Long Live to the King",
-                action: "ouvrirKing()"
-            },
-            {
-                nom: "Legion of Stationery",
-                action: "ouvrirLegion()"
-            },
-            {
-                nom: "Chaos",
-                action: "ouvrirChaos()"
-            },
-            {
-                nom: "DAX Archive",
-                action: "ouvrirDAXArchive()"
-            },
-            {
-                nom: "DAX Prototype 3",
-                action: "ouvrirDAX2()"
-            },
-            {
-                nom: "Emillien",
-                action: "ouvrirEmillien()"
-            },
-            {
-                nom: "Nok",
-                action: "ouvrirNok()"
-            },
-            {
-                nom: "The Fury of the Gods",
-                action: "ouvrirFury()"
-            },
-            {
-                nom: "Destruction of Evidence",
-                action: "ouvrirDestruction()"
-            }
+            { nom: "The Tom", action: "ouvrirTom()" },
+            { nom: "Creation", action: "ouvrirCreation()" },
+            { nom: "Long Live to the King", action: "ouvrirKing()" },
+            { nom: "Legion of Stationery", action: "ouvrirLegion()" },
+            { nom: "Chaos", action: "ouvrirChaos()" },
+            { nom: "DAX Archive", action: "ouvrirDAXArchive()" },
+            { nom: "DAX Prototype 3", action: "ouvrirDAX2()" },
+            { nom: "Emillien", action: "ouvrirEmillien()" },
+            { nom: "Nok", action: "ouvrirNok()" },
+            { nom: "The Fury of the Gods", action: "ouvrirFury()" },
+            { nom: "Destruction of Evidence", action: "ouvrirDestruction()" }
         ]
     );
 }
@@ -73,6 +43,7 @@ function ouvrirDossierArchive(){
 /* =========================
 FICHIERS DE L'ARCHIVE
 ========================= */
+
 function ouvrirTom(){
     dossierActuel = "Tom";
     afficherFenetreCode();
@@ -130,6 +101,7 @@ function ouvrirDestruction(){
 /* =========================
 CORBEILLE
 ========================= */
+
 function ouvrirCorbeille(){
     dossierActuel = "Corbeille";
     afficherFenetreCode();
@@ -138,12 +110,15 @@ function ouvrirCorbeille(){
 /* =========================
 FENÊTRE DE CODE
 ========================= */
+
 function afficherFenetreCode(){
     let fenetre = document.getElementById("fenetreCode");
     let contenu = document.getElementById("contenuCode");
+
     if(!fenetre || !contenu){
         return;
     }
+
     fenetre.style.display = "block";
     fenetre.style.zIndex = "600";
     document.getElementById("code").value = "";
@@ -153,6 +128,7 @@ function afficherFenetreCode(){
 /* =========================
 VÉRIFICATION DES CODES
 ========================= */
+
 function verifierCode(){
     let code = document.getElementById("code").value;
     let destination = "";
@@ -203,16 +179,31 @@ function verifierCode(){
 }
 
 /* =========================
-RÉDUIRE / FERMER CODE
+RÉDUIRE LA FENÊTRE DE CODE
 ========================= */
+
 function reduireCode(){
     let contenu = document.getElementById("contenuCode");
-    if(!contenu){ return; }
-    contenu.style.display = (contenu.style.display === "none") ? "block" : "none";
+
+    if(!contenu){
+        return;
+    }
+
+    if(contenu.style.display === "none"){
+        contenu.style.display = "block";
+    }
+    else{
+        contenu.style.display = "none";
+    }
 }
+
+/* =========================
+FERMER LA FENÊTRE DE CODE
+========================= */
 
 function fermerCode(){
     let fenetre = document.getElementById("fenetreCode");
+
     if(fenetre){
         fenetre.style.display = "none";
     }
@@ -221,8 +212,11 @@ function fermerCode(){
 /* =========================
 FENÊTRE THE TOM
 ========================= */
+
 function afficherFenetreTom(){
-    if(fenetreTomOuverte){ return; }
+    if(fenetreTomOuverte){
+        return;
+    }
 
     let fenetre = document.createElement("div");
     fenetre.id = "fenetreTom";
@@ -236,6 +230,7 @@ function afficherFenetreTom(){
                 <button onclick="fermerTom()">X</button>
             </div>
         </div>
+
         <div id="contenuTom" class="contenu">
             <h2>The Tom</h2>
             <p>Fichier sécurisé.</p>
@@ -243,29 +238,55 @@ function afficherFenetreTom(){
     `;
 
     document.body.appendChild(fenetre);
+
     fenetreTomOuverte = true;
-    rendreDeplacable(fenetre, fenetre.querySelector(".barre"));
+
+    rendreDeplacable(
+        fenetre,
+        fenetre.querySelector(".barre")
+    );
 }
+
+/* =========================
+RÉDUIRE THE TOM
+========================= */
 
 function reduireTom(){
     let contenu = document.getElementById("contenuTom");
-    if(!contenu){ return; }
-    contenu.style.display = (contenu.style.display === "none") ? "block" : "none";
+
+    if(!contenu){
+        return;
+    }
+
+    if(contenu.style.display === "none"){
+        contenu.style.display = "block";
+    }
+    else{
+        contenu.style.display = "none";
+    }
 }
+
+/* =========================
+FERMER THE TOM
+========================= */
 
 function fermerTom(){
     let fenetre = document.getElementById("fenetreTom");
+
     if(fenetre){
         fenetre.remove();
     }
+
     fenetreTomOuverte = false;
 }
 
 /* =========================
-DOSSIER D'ARCHIVES
+CRÉATION D'UNE FENÊTRE DE DOSSIER
 ========================= */
+
 function afficherDossier(nom, fichiers){
     let ancienneFenetre = document.getElementById("fenetreDossier");
+
     if(ancienneFenetre){
         ancienneFenetre.remove();
     }
@@ -275,6 +296,7 @@ function afficherDossier(nom, fichiers){
     fenetre.className = "fenetreDossier";
 
     let contenuFichiers = "";
+
     fichiers.forEach(function(fichier){
         contenuFichiers += `
             <div class="fichier" onclick="${fichier.action}">
@@ -291,6 +313,7 @@ function afficherDossier(nom, fichiers){
                 <button onclick="fermerDossier()">X</button>
             </div>
         </div>
+
         <div class="contenuDossier">
             <div class="grilleFichiers">
                 ${contenuFichiers}
@@ -299,21 +322,33 @@ function afficherDossier(nom, fichiers){
     `;
 
     document.body.appendChild(fenetre);
-    rendreDeplacable(fenetre, fenetre.querySelector(".barre"));
+
+    rendreDeplacable(
+        fenetre,
+        fenetre.querySelector(".barre")
+    );
 }
+
+/* =========================
+FERMER LE DOSSIER
+========================= */
 
 function fermerDossier(){
     let fenetre = document.getElementById("fenetreDossier");
+
     if(fenetre){
         fenetre.remove();
     }
 }
 
 /* =========================
-DÉPLACEMENT DES FENÊTRES
+FENÊTRES DÉPLAÇABLES
 ========================= */
+
 function rendreDeplacable(fenetre, barre){
-    if(!fenetre || !barre){ return; }
+    if(!fenetre || !barre){
+        return;
+    }
 
     let enDeplacement = false;
     let decalageX = 0;
@@ -321,15 +356,22 @@ function rendreDeplacable(fenetre, barre){
 
     barre.addEventListener("mousedown", function(e){
         enDeplacement = true;
+
         let rectangle = fenetre.getBoundingClientRect();
+
         decalageX = e.clientX - rectangle.left;
         decalageY = e.clientY - rectangle.top;
+
         fenetre.style.zIndex = "700";
+
         e.preventDefault();
     });
 
     document.addEventListener("mousemove", function(e){
-        if(!enDeplacement){ return; }
+        if(!enDeplacement){
+            return;
+        }
+
         fenetre.style.left = (e.clientX - decalageX) + "px";
         fenetre.style.top = (e.clientY - decalageY) + "px";
     });
@@ -339,8 +381,15 @@ function rendreDeplacable(fenetre, barre){
     });
 }
 
+/* =========================
+FENÊTRE DE CODE DÉPLAÇABLE
+========================= */
+
 document.addEventListener("DOMContentLoaded", function(){
     let fenetreCode = document.getElementById("fenetreCode");
     let barreCode = document.querySelector("#fenetreCode .barre");
-    rendreDeplacable(fenetreCode, barreCode);
+
+    if(fenetreCode && barreCode){
+        rendreDeplacable(fenetreCode, barreCode);
+    }
 });
