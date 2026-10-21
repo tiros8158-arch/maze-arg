@@ -7,36 +7,31 @@
 <body>
 
 <div class="bureau">
-    <!-- Groupe d'icônes alignées à gauche comme sur le bureau -->
-    <div class="grille-gauche">
-        <!-- DAX -->
-        <div class="icone" onclick="ouvrirDAX()">
-            <img src="images/dossier.png">
-            <p>DAX</p>
-        </div>
-
-        <!-- Archive -->
-        <div class="icone" onclick="ouvrirDossierArchive()">
-            <img src="images/dossier.png">
-            <p>Archive</p>
-        </div>
-
-        <!-- Corbeille -->
-        <div class="icone" onclick="ouvrirCorbeille()">
-            <img src="images/corbeille.png">
-            <p>Corbeille</p>
-        </div>
+    <!-- Icônes alignées à gauche -->
+    <div class="icone" onclick="ouvrirDAX()">
+        <img src="images/dossier.png">
+        <p>DAX</p>
     </div>
 
-    <!-- Service (Puisqu'il est positionné en absolute right dans le CSS, il va s'aligner tout en haut à droite) -->
+    <div class="icone" onclick="ouvrirDossierArchive()">
+        <img src="images/dossier.png">
+        <p>Archive</p>
+    </div>
+
+    <div class="icone" onclick="ouvrirCorbeille()">
+        <img src="images/corbeille.png">
+        <p>Corbeille</p>
+    </div>
+
+    <!-- Service #### (tout à droite de l'écran) -->
     <div class="icone service" onclick="ouvrirService()">
         <img src="images/telephone.png">
         <p>Service ####</p>
     </div>
 </div>
 
-<!-- Fenêtre de code -->
-<div id="fenetreCode" class="fenetreCode">
+<!-- Fenêtre de code (Cachée au chargement) -->
+<div id="fenetreCode" class="fenetreCode" style="display: none;">
     <div class="barre">
         <span>Dossier sécurisé</span>
         <div class="boutonsFenetre">
