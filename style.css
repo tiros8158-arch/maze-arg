@@ -12,6 +12,14 @@ body {
     overflow-x: hidden;
 }
 
+/* Style appliqué aux pages de fichiers ouverts (fond blanc complet) */
+body.page-fichier {
+    background-image: none !important;
+    background-color: #ffffff !important;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
 /* =========================
 BUREAU
 ========================= */
@@ -106,9 +114,10 @@ BARRE DES FENÊTRES
     background: #eeeeee;
     border: 1px solid #555;
     cursor: pointer;
-    padding: 2px 6px;
+    padding: 2px 8px;
     font-weight: bold;
     color: black;
+    border-radius: 3px;
 }
 
 .btnRetour:hover {
@@ -235,26 +244,15 @@ FENÊTRE DE CODE
 }
 
 /* =========================
-FENÊTRE THE TOM
+STYLE DES CONTENUS DE FICHIERS OUVERTS
 ========================= */
 
-.fenetreTom {
-    position: absolute;
-    top: 120px;
-    left: 350px;
-    width: 650px;
-    max-width: calc(100vw - 40px);
-    max-height: 70vh;
-    background: #eeeeee;
-    color: black;
-    border: 3px solid black;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-    z-index: 500;
-}
-
-.fenetreTom .contenu {
-    max-height: calc(70vh - 50px);
-    overflow: auto;
-    background: #ffffff;
+.contenu-fichier {
+    background-color: #ffffff;
+    color: #000000;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
