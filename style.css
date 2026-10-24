@@ -1,120 +1,85 @@
 body {
-
-    margin:0;
-
-  background-image: url("images/fond.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    height:100vh;
-
-    font-family:Arial;
-
+    margin: 0;
+    background-image: url("fond.jpg"); /* Remets "images/fond.jpg" si ton image est dans un dossier images */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    font-family: Arial;
+    overflow: hidden;
 }
-
 
 /* Bureau */
-
 .bureau {
-
-    display:flex;
-
-    flex-direction:column;
-
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 25px;
+    box-sizing: border-box;
 }
 
-
-
+/* Icônes du bureau */
 .icone {
-
-    width:100px;
-
-    text-align:center;
-
-    color:white;
-
-    margin:20px;
-
-    cursor:pointer;
-
+    width: 100px;
+    text-align: center;
+    color: white;
+    margin: 20px;
+    cursor: pointer;
+    user-select: none;
 }
-
-
 
 .icone img {
-
-    width:60px;
-
-    height:60px;
-
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
+.icone p {
+    margin: 5px 0 0 0;
+    word-wrap: break-word;
+    text-shadow: 2px 2px 3px black;
+}
 
+/* Service (positionné tout à droite sur le bureau) */
+.service {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
 
 /* Fenêtre de code */
-
 .fenetreCode {
-
-    display:none;
-
-    position:absolute;
-
-    top:200px;
-
-    left:300px;
-
-    background:white;
-
-    color:black;
-
-    padding:30px;
-
-    border:2px solid black;
-
+    display: none;
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    background: white;
+    color: black;
+    padding: 30px;
+    border: 2px solid black;
+    z-index: 600;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
 }
-
-
 
 /* Fenêtre des dossiers */
-
 .fenetre {
-
-    width:600px;
-
-    margin:100px auto;
-
-    background:#eeeeee;
-
-    color:black;
-
-    border:3px solid black;
-
+    width: 600px;
+    margin: 100px auto;
+    background: #eeeeee;
+    color: black;
+    border: 3px solid black;
 }
-
-
 
 /* Barre du haut */
-
 .barre {
-
-    background:#222;
-
-    color:white;
-
-    padding:10px;
-
-    font-weight:bold;
-
+    background: #222;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
 }
 
-
-
 /* Contenu du fichier */
-
 .contenu {
-
-    padding:20px;
-
+    padding: 20px;
 }
