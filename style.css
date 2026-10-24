@@ -1,17 +1,11 @@
-/* =========================
-   STYLE GLOBAL
-========================= */
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Fond blanc par défaut pour tous les fichiers ouverts */
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
+    background-color: #ffffff; /* Fond blanc par défaut pour les autres pages */
+    font-family: Arial;
 }
 
-/* =========================
-   BUREAU (Fond d'écran uniquement sur index.html)
-========================= */
+/* Bureau */
 .bureau {
     position: relative;
     width: 100%;
@@ -19,7 +13,7 @@ body {
     padding: 25px;
     box-sizing: border-box;
 
-    /* Chemin vers l'image de fond : */
+    /* Le fond d'écran chargé depuis le dossier images vu sur ta capture */
     background-image: url("images/fond.jpg");
     background-size: cover;
     background-position: center;
@@ -27,9 +21,6 @@ body {
     background-attachment: fixed;
 }
 
-/* =========================
-   ICÔNES DU BUREAU
-========================= */
 .icone {
     width: 100px;
     text-align: center;
@@ -51,16 +42,14 @@ body {
     text-shadow: 2px 2px 3px black;
 }
 
-/* Service #### (positionné tout à droite) */
+/* Service aligné tout à droite */
 .service {
     position: absolute;
     right: 25px;
     top: 25px;
 }
 
-/* =========================
-   FENÊTRES ET DOSSIERS
-========================= */
+/* Fenêtre de code */
 .fenetreCode {
     display: none;
     position: absolute;
@@ -74,6 +63,7 @@ body {
     box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
 }
 
+/* Fenêtre des dossiers */
 .fenetre {
     width: 600px;
     margin: 100px auto;
@@ -82,13 +72,15 @@ body {
     border: 3px solid black;
 }
 
+/* Barre du haut */
 .barre {
-    background: #222222;
+    background: #222;
     color: white;
     padding: 10px;
     font-weight: bold;
 }
 
+/* Contenu du fichier */
 .contenu {
     padding: 20px;
     background: #ffffff;
