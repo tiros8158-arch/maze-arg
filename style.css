@@ -1,11 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Fond blanc par défaut pour les autres pages */
+    background-color: #ffffff; /* Fond blanc uni par défaut pour tous les fichiers */
     font-family: Arial;
 }
 
-/* Bureau */
+/* Bureau (Fond d'écran appliqué uniquement ici) */
 .bureau {
     position: relative;
     width: 100%;
@@ -13,7 +13,7 @@ body {
     padding: 25px;
     box-sizing: border-box;
 
-    /* Le fond d'écran chargé depuis le dossier images vu sur ta capture */
+    /* Image de fond dans le dossier images/ */
     background-image: url("images/fond.jpg");
     background-size: cover;
     background-position: center;
@@ -42,7 +42,7 @@ body {
     text-shadow: 2px 2px 3px black;
 }
 
-/* Service aligné tout à droite */
+/* Service (aligné tout à droite sur le bureau) */
 .service {
     position: absolute;
     right: 25px;
@@ -63,7 +63,7 @@ body {
     box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
 }
 
-/* Fenêtre des dossiers */
+/* Fenêtres des dossiers */
 .fenetre {
     width: 600px;
     margin: 100px auto;
