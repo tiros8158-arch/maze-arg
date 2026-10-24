@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-image: url("fond.jpg"); /* Remets "images/fond.jpg" si ton image est dans un dossier images */
+  background-image: url("images/fond.jpg"); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
