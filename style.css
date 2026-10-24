@@ -1,19 +1,19 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Fond blanc uni par défaut pour tous les fichiers */
-    font-family: Arial;
+    background-color: #ffffff; /* Fond blanc uni pour les fichiers */
+    font-family: Arial, sans-serif;
 }
 
-/* Bureau (Fond d'écran appliqué uniquement ici) */
+/* =========================
+   BUREAU
+========================= */
 .bureau {
     position: relative;
     width: 100%;
     min-height: 100vh;
     padding: 25px;
     box-sizing: border-box;
-
-    /* Image de fond dans le dossier images/ */
     background-image: url("images/fond.jpg");
     background-size: cover;
     background-position: center;
@@ -42,46 +42,169 @@ body {
     text-shadow: 2px 2px 3px black;
 }
 
-/* Service (aligné tout à droite sur le bureau) */
+/* Service (aligné tout à droite) */
 .service {
     position: absolute;
     right: 25px;
     top: 25px;
 }
 
-/* Fenêtre de code */
-.fenetreCode {
-    display: none;
+/* =========================
+   FENÊTRE DOSSIER ARCHIVE (Taille contrôlée & centrée)
+========================= */
+.fenetreDossier, .fenetre {
     position: absolute;
-    top: 200px;
-    left: 300px;
-    background: white;
-    color: black;
-    padding: 30px;
-    border: 2px solid black;
-    z-index: 600;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-}
-
-/* Fenêtres des dossiers */
-.fenetre {
-    width: 600px;
-    margin: 100px auto;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%); /* Centre la fenêtre sur l'écran */
+    width: 550px;                 /* Largeur fixe et raisonnable */
+    max-width: 90vw;             /* S'adapte si l'écran est petit */
+    max-height: 70vh;
     background: #eeeeee;
     color: black;
     border: 3px solid black;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    z-index: 400;
 }
 
 /* Barre du haut */
 .barre {
-    background: #222;
+    background: #222222;
     color: white;
     padding: 10px;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
 }
 
-/* Contenu du fichier */
-.contenu {
+.titreBarre {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btnRetour {
+    background: #eeeeee;
+    border: 1px solid #555;
+    cursor: pointer;
+    padding: 2px 6px;
+    font-weight: bold;
+    color: black;
+}
+
+.btnRetour:hover {
+    background: #cccccc;
+}
+
+.boutonsFenetre button {
+    width: 28px;
+    height: 24px;
+    padding: 0;
+    border: 1px solid #555;
+    background: #eeeeee;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.boutonsFenetre button:hover {
+    background: #cccccc;
+}
+
+/* Contenu du dossier */
+.contenuDossier, .contenu {
     padding: 20px;
     background: #ffffff;
+    max-height: calc(70vh - 50px);
+    overflow-y: auto;
+}
+
+/* Grille des fichiers à l'intérieur */
+.grilleFichiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    gap: 15px;
+    justify-content: start;
+}
+
+.fichier {
+    width: 90px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fichier img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.fichier p {
+    margin: 5px 0 0 0;
+    font-size: 13px;
+    word-wrap: break-word;
+    color: black;
+}
+
+/* =========================
+   FENÊTRE DE CODE
+========================= */
+.fenetreCode {
+    display: none;
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    background: #eeeeee;
+    color: black;
+    padding: 0;
+    border: 3px solid black;
+    z-index: 600;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+}
+
+.fenetreCode .contenu {
+    padding: 20px;
+    background: #ffffff;
+}
+
+.texteCode {
+    margin-top: 0;
+    font-size: 14px;
+    color: black;
+}
+
+.ligneInput {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.fenetreCode input {
+    flex: 1;
+    padding: 7px;
+    border: 1px solid black;
+}
+
+.fenetreCode .contenu button {
+    padding: 7px 12px;
+    cursor: pointer;
+    background: #eeeeee;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.fenetreCode .contenu button:hover {
+    background: #cccccc;
+}
+
+.messageErreur {
+    color: red;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
