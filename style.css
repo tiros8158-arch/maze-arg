@@ -1,77 +1,28 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; /* Fond blanc uni pour les fichiers */
-    font-family: Arial, sans-serif;
-}
-
 /* =========================
-   BUREAU
-========================= */
-.bureau {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 25px;
-    box-sizing: border-box;
-    background-image: url("images/fond.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.icone {
-    width: 100px;
-    text-align: center;
-    color: white;
-    margin: 20px;
-    cursor: pointer;
-    user-select: none;
-}
-
-.icone img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-}
-
-.icone p {
-    margin: 5px 0 0 0;
-    word-wrap: break-word;
-    text-shadow: 2px 2px 3px black;
-}
-
-/* Service (aligné tout à droite) */
-.service {
-    position: absolute;
-    right: 25px;
-    top: 25px;
-}
-
-/* =========================
-   FENÊTRE DOSSIER ARCHIVE (Taille contrôlée & centrée)
+   FENÊTRES ET DOSSIERS (CENTRES ET TAILLE FIXE)
 ========================= */
 .fenetreDossier, .fenetre {
-    position: absolute;
-    top: 100px;
+    display: none;                /* Masqué par défaut, affiché via JavaScript */
+    position: fixed;              /* Reste bien centré même au défilement */
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%); /* Centre la fenêtre sur l'écran */
-    width: 550px;                 /* Largeur fixe et raisonnable */
-    max-width: 90vw;             /* S'adapte si l'écran est petit */
-    max-height: 70vh;
+    transform: translate(-50%, -50%); /* Centrage parfait au milieu de l'écran */
+    width: 550px;                 /* Largeur fixe */
+    max-width: 90vw;             /* Sécurité pour mobile */
+    max-height: 80vh;            /* Ne dépasse jamais 80% de la hauteur de l'écran */
     background: #eeeeee;
     color: black;
     border: 3px solid black;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-    z-index: 400;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.6);
+    z-index: 500;
+    box-sizing: border-box;
 }
 
-/* Barre du haut */
+/* Barre de titre */
 .barre {
     background: #222222;
     color: white;
-    padding: 10px;
+    padding: 10px 15px;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
@@ -79,54 +30,21 @@ body {
     user-select: none;
 }
 
-.titreBarre {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btnRetour {
-    background: #eeeeee;
-    border: 1px solid #555;
-    cursor: pointer;
-    padding: 2px 6px;
-    font-weight: bold;
-    color: black;
-}
-
-.btnRetour:hover {
-    background: #cccccc;
-}
-
-.boutonsFenetre button {
-    width: 28px;
-    height: 24px;
-    padding: 0;
-    border: 1px solid #555;
-    background: #eeeeee;
-    color: black;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.boutonsFenetre button:hover {
-    background: #cccccc;
-}
-
-/* Contenu du dossier */
+/* Zone de contenu des dossiers (avec ascenseur si trop de fichiers) */
 .contenuDossier, .contenu {
     padding: 20px;
     background: #ffffff;
-    max-height: calc(70vh - 50px);
-    overflow-y: auto;
+    max-height: calc(80vh - 50px);
+    overflow-y: auto;             /* Ajoute une barre de défilement si nécessaire */
+    box-sizing: border-box;
 }
 
-/* Grille des fichiers à l'intérieur */
+/* Grille des fichiers dans Archive */
 .grilleFichiers {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 100px);
-    gap: 15px;
-    justify-content: start;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 20px;
+    justify-items: center;
 }
 
 .fichier {
@@ -147,64 +65,4 @@ body {
     font-size: 13px;
     word-wrap: break-word;
     color: black;
-}
-
-/* =========================
-   FENÊTRE DE CODE
-========================= */
-.fenetreCode {
-    display: none;
-    position: absolute;
-    top: 180px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 380px;
-    background: #eeeeee;
-    color: black;
-    padding: 0;
-    border: 3px solid black;
-    z-index: 600;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-}
-
-.fenetreCode .contenu {
-    padding: 20px;
-    background: #ffffff;
-}
-
-.texteCode {
-    margin-top: 0;
-    font-size: 14px;
-    color: black;
-}
-
-.ligneInput {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.fenetreCode input {
-    flex: 1;
-    padding: 7px;
-    border: 1px solid black;
-}
-
-.fenetreCode .contenu button {
-    padding: 7px 12px;
-    cursor: pointer;
-    background: #eeeeee;
-    border: 1px solid black;
-    font-weight: bold;
-}
-
-.fenetreCode .contenu button:hover {
-    background: #cccccc;
-}
-
-.messageErreur {
-    color: red;
-    font-size: 13px;
-    margin-top: 10px;
-    margin-bottom: 0;
 }
