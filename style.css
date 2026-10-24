@@ -1,21 +1,22 @@
 /* =========================
-   FENÊTRES ET DOSSIERS (CENTRES ET TAILLE FIXE)
+   FENÊTRE ARCHIVE / DOSSIER
 ========================= */
 .fenetreDossier, .fenetre {
-    display: none;                /* Masqué par défaut, affiché via JavaScript */
-    position: fixed;              /* Reste bien centré même au défilement */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centrage parfait au milieu de l'écran */
-    width: 550px;                 /* Largeur fixe */
-    max-width: 90vw;             /* Sécurité pour mobile */
-    max-height: 80vh;            /* Ne dépasse jamais 80% de la hauteur de l'écran */
-    background: #eeeeee;
-    color: black;
-    border: 3px solid black;
-    box-shadow: 5px 5px 20px rgba(0,0,0,0.6);
-    z-index: 500;
-    box-sizing: border-box;
+    display: none;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 500px !important;
+    max-width: 90vw !important;
+    height: auto !important;
+    max-height: 75vh !important;
+    background: #eeeeee !important;
+    color: black !important;
+    border: 3px solid black !important;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.6) !important;
+    z-index: 500 !important;
+    box-sizing: border-box !important;
 }
 
 /* Barre de titre */
@@ -30,13 +31,13 @@
     user-select: none;
 }
 
-/* Zone de contenu des dossiers (avec ascenseur si trop de fichiers) */
+/* Zone de contenu interne (unique et propre, avec défilement) */
 .contenuDossier, .contenu {
-    padding: 20px;
-    background: #ffffff;
-    max-height: calc(80vh - 50px);
-    overflow-y: auto;             /* Ajoute une barre de défilement si nécessaire */
-    box-sizing: border-box;
+    padding: 20px !important;
+    background: #ffffff !important;
+    max-height: calc(75vh - 50px) !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
 }
 
 /* Grille des fichiers dans Archive */
