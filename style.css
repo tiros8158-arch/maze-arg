@@ -1,25 +1,75 @@
-/* =========================
-   FENÊTRE ARCHIVE / DOSSIER
-========================= */
-.fenetreDossier, .fenetre {
-    display: none;
-    position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 500px !important;
-    max-width: 90vw !important;
-    height: auto !important;
-    max-height: 75vh !important;
-    background: #eeeeee !important;
-    color: black !important;
-    border: 3px solid black !important;
-    box-shadow: 5px 5px 20px rgba(0,0,0,0.6) !important;
-    z-index: 500 !important;
-    box-sizing: border-box !important;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
 }
 
-/* Barre de titre */
+/* Bureau uniquement */
+.bureau {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 25px;
+    box-sizing: border-box;
+    background-image: url("images/fond.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Icônes du bureau (taille normale) */
+.icone {
+    width: 100px;
+    text-align: center;
+    color: white;
+    margin: 20px;
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.icone img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.icone p {
+    margin: 5px 0 0 0;
+    word-wrap: break-word;
+    text-shadow: 2px 2px 3px black;
+}
+
+/* Service tout à droite */
+.service {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+
+/* Fenêtre de l'Archive (Compacte et centrée) */
+.fenetreDossier {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    max-width: 90vw;
+    max-height: 75vh;
+    background: #eeeeee;
+    color: black;
+    border: 3px solid black;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.6);
+    z-index: 500;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barre de titre des fenêtres */
 .barre {
     background: #222222;
     color: white;
@@ -31,16 +81,41 @@
     user-select: none;
 }
 
-/* Zone de contenu interne (unique et propre, avec défilement) */
-.contenuDossier, .contenu {
-    padding: 20px !important;
-    background: #ffffff !important;
-    max-height: calc(75vh - 50px) !important;
-    overflow-y: auto !important;
-    box-sizing: border-box !important;
+.titreBarre {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Grille des fichiers dans Archive */
+.btnRetour {
+    background: #eeeeee;
+    border: 1px solid #555;
+    cursor: pointer;
+    padding: 2px 6px;
+    font-weight: bold;
+    color: black;
+}
+
+.boutonsFenetre button {
+    width: 28px;
+    height: 24px;
+    border: 1px solid #555;
+    background: #eeeeee;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Contenu interne de l'archive avec défilement */
+.contenuDossier {
+    padding: 20px;
+    background: #ffffff;
+    max-height: calc(75vh - 50px);
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Grille des fichiers à l'intérieur de l'archive */
 .grilleFichiers {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
@@ -48,6 +123,7 @@
     justify-items: center;
 }
 
+/* Fichiers individuels dans l'archive (taille normale) */
 .fichier {
     width: 90px;
     text-align: center;
@@ -66,4 +142,50 @@
     font-size: 13px;
     word-wrap: break-word;
     color: black;
+}
+
+/* Fenêtre de code / mot de passe */
+.fenetreCode {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    background: #eeeeee;
+    color: black;
+    border: 3px solid black;
+    z-index: 600;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+}
+
+.fenetreCode .contenu {
+    padding: 20px;
+    background: #ffffff;
+}
+
+.texteCode {
+    margin-top: 0;
+    font-size: 14px;
+    color: black;
+}
+
+.ligneInput {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.fenetreCode input {
+    flex: 1;
+    padding: 7px;
+    border: 1px solid black;
+}
+
+.messageErreur {
+    color: red;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
