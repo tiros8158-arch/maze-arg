@@ -1,5 +1,4 @@
 let dossierActuel = "";
-let fenetreTomOuverte = false;
 
 /* =========================
 SERVICE
@@ -44,10 +43,7 @@ function ouvrirKing(){ dossierActuel = "King"; afficherFenetreCode(); }
 function ouvrirTom(){ dossierActuel = "Tom"; afficherFenetreCode(); }
 function ouvrirLegion(){ dossierActuel = "Legion"; afficherFenetreCode(); }
 function ouvrirChaos(){ dossierActuel = "Chaos"; afficherFenetreCode(); }
-
-/* Le fichier "DAX archive" demande le code pour ensuite ouvrir DAX.html */
 function ouvrirDAXArchive(){ dossierActuel = "DAX"; afficherFenetreCode(); }
-
 function ouvrirEmillien(){ dossierActuel = "Emillien"; afficherFenetreCode(); }
 function ouvrirNok(){ dossierActuel = "Nok"; afficherFenetreCode(); }
 function ouvrirFury(){ dossierActuel = "Fury"; afficherFenetreCode(); }
@@ -86,12 +82,9 @@ function verifierCode(){
     let destination = "";
 
     if(dossierActuel === "Tom" && code === "XxToMxX"){
-        afficherFenetreTom();
-        fermerCode();
-        return;
+        destination = "The_Tom.html";
     }
-
-    if(dossierActuel === "Creation" && code === "041P"){
+    else if(dossierActuel === "Creation" && code === "041P"){
         destination = "Creation.html";
     }
     else if(dossierActuel === "King" && code === "ABST_1"){
@@ -147,53 +140,7 @@ function fermerCode(){
 }
 
 /* =========================
-FENÊTRE THE TOM
-========================= */
-function afficherFenetreTom(){
-    if(fenetreTomOuverte){ return; }
-
-    let fenetre = document.createElement("div");
-    fenetre.id = "fenetreTom";
-    fenetre.className = "fenetreTom";
-
-    fenetre.innerHTML = `
-        <div class="barre">
-            <div class="titreBarre">
-                <button class="btnRetour" onclick="fermerTom()" title="Retour">←</button>
-                <span>The Tom</span>
-            </div>
-            <div class="boutonsFenetre">
-                <button onclick="reduireTom()">—</button>
-                <button onclick="fermerTom()">✕</button>
-            </div>
-        </div>
-        <div id="contenuTom" class="contenu">
-            <h2>The Tom</h2>
-            <p>Fichier sécurisé.</p>
-        </div>
-    `;
-
-    document.body.appendChild(fenetre);
-    fenetreTomOuverte = true;
-    rendreDeplacable(fenetre, fenetre.querySelector(".barre"));
-}
-
-function reduireTom(){
-    let contenu = document.getElementById("contenuTom");
-    if(!contenu){ return; }
-    contenu.style.display = (contenu.style.display === "none") ? "block" : "none";
-}
-
-function fermerTom(){
-    let fenetre = document.getElementById("fenetreTom");
-    if(fenetre){
-        fenetre.remove();
-    }
-    fenetreTomOuverte = false;
-}
-
-/* =========================
-DOSSIER D'ARCHIVES
+DOSSIER D'ARCHIVES (Taille fixe et centrée)
 ========================= */
 function afficherDossier(nom, fichiers){
     let ancienneFenetre = document.getElementById("fenetreDossier");
@@ -204,6 +151,20 @@ function afficherDossier(nom, fichiers){
     let fenetre = document.createElement("div");
     fenetre.id = "fenetreDossier";
     fenetre.className = "fenetreDossier";
+
+    fenetre.style.position = "fixed";
+    fenetre.style.top = "50%";
+    fenetre.style.left = "50%";
+    fenetre.style.transform = "translate(-50%, -50%)";
+    fenetre.style.width = "520px";
+    fenetre.style.maxHeight = "75vh";
+    fenetre.style.background = "#eeeeee";
+    fenetre.style.border = "3px solid black";
+    fenetre.style.boxShadow = "5px 5px 20px rgba(0,0,0,0.6)";
+    fenetre.style.zIndex = "500";
+    fenetre.style.boxSizing = "border-box";
+    fenetre.style.display = "flex";
+    fenetre.style.flexDirection = "column";
 
     let contenuFichiers = "";
     fichiers.forEach(function(fichier){
@@ -226,7 +187,7 @@ function afficherDossier(nom, fichiers){
             </div>
         </div>
 
-        <div class="contenuDossier">
+        <div class="contenuDossier" style="padding: 20px; background: #ffffff; overflow-y: auto; max-height: calc(75vh - 50px); box-sizing: border-box;">
             <div class="grilleFichiers">
                 ${contenuFichiers}
             </div>
